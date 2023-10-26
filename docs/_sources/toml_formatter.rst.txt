@@ -25,10 +25,18 @@ toml\_formatter.commands\_functions module
    :undoc-members:
    :show-inheritance:
 
-toml\_formatter.config\_parser module
--------------------------------------
+toml\_formatter.formatter module
+--------------------------------
 
-.. automodule:: toml_formatter.config_parser
+.. automodule:: toml_formatter.formatter
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+toml\_formatter.formatter\_options module
+-----------------------------------------
+
+.. automodule:: toml_formatter.formatter_options
    :members:
    :undoc-members:
    :show-inheritance:
@@ -37,14 +45,6 @@ toml\_formatter.logs module
 ---------------------------
 
 .. automodule:: toml_formatter.logs
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-toml\_formatter.toml\_formatter module
---------------------------------------
-
-.. automodule:: toml_formatter.toml_formatter
    :members:
    :undoc-members:
    :show-inheritance:

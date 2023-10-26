@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>toml_formatter.config_parser &mdash; TOML Formatter  documentation</title>
+  <title>toml_formatter.formatter_options &mdash; TOML Formatter  documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/autodoc_pydantic.css" type="text/css" />
@@ -73,13 +73,24 @@
 <li class="toctree-l3"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.commands_functions.show_configs"><code class="docutils literal notranslate"><span class="pre">show_configs()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../toml_formatter.html#module-toml_formatter.config_parser">toml_formatter.config_parser module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.config_parser.FormatterOptions"><code class="docutils literal notranslate"><span class="pre">FormatterOptions</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.config_parser.FormatterOptions.indentation"><code class="docutils literal notranslate"><span class="pre">FormatterOptions.indentation</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.config_parser.FormatterOptions.line_length"><code class="docutils literal notranslate"><span class="pre">FormatterOptions.line_length</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.config_parser.FormatterOptions.loglevel"><code class="docutils literal notranslate"><span class="pre">FormatterOptions.loglevel</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.config_parser.FormatterOptions.section_order_overrides"><code class="docutils literal notranslate"><span class="pre">FormatterOptions.section_order_overrides</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.config_parser.FormatterOptions.from_toml_file"><code class="docutils literal notranslate"><span class="pre">FormatterOptions.from_toml_file()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../toml_formatter.html#module-toml_formatter.formatter">toml_formatter.formatter module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.formatter.FormattedToml"><code class="docutils literal notranslate"><span class="pre">FormattedToml</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.formatter.FormattedToml.dumps"><code class="docutils literal notranslate"><span class="pre">FormattedToml.dumps()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.formatter.FormattedToml.from_file"><code class="docutils literal notranslate"><span class="pre">FormattedToml.from_file()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.formatter.FormattedToml.from_string"><code class="docutils literal notranslate"><span class="pre">FormattedToml.from_string()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.formatter.FormattedToml.indentation"><code class="docutils literal notranslate"><span class="pre">FormattedToml.indentation</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.formatter.FormattedToml.sections"><code class="docutils literal notranslate"><span class="pre">FormattedToml.sections</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../toml_formatter.html#module-toml_formatter.formatter_options">toml_formatter.formatter_options module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.formatter_options.FormatterOptions"><code class="docutils literal notranslate"><span class="pre">FormatterOptions</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.formatter_options.FormatterOptions.indentation"><code class="docutils literal notranslate"><span class="pre">FormatterOptions.indentation</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.formatter_options.FormatterOptions.line_length"><code class="docutils literal notranslate"><span class="pre">FormatterOptions.line_length</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.formatter_options.FormatterOptions.loglevel"><code class="docutils literal notranslate"><span class="pre">FormatterOptions.loglevel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.formatter_options.FormatterOptions.section_order_overrides"><code class="docutils literal notranslate"><span class="pre">FormatterOptions.section_order_overrides</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.formatter_options.FormatterOptions.from_toml_file"><code class="docutils literal notranslate"><span class="pre">FormatterOptions.from_toml_file()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -108,17 +119,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.logs.log_elapsed_time"><code class="docutils literal notranslate"><span class="pre">log_elapsed_time()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../toml_formatter.html#module-toml_formatter.toml_formatter">toml_formatter.toml_formatter module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.toml_formatter.FormattedToml"><code class="docutils literal notranslate"><span class="pre">FormattedToml</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.toml_formatter.FormattedToml.dumps"><code class="docutils literal notranslate"><span class="pre">FormattedToml.dumps()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.toml_formatter.FormattedToml.from_file"><code class="docutils literal notranslate"><span class="pre">FormattedToml.from_file()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.toml_formatter.FormattedToml.from_string"><code class="docutils literal notranslate"><span class="pre">FormattedToml.from_string()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.toml_formatter.FormattedToml.indentation"><code class="docutils literal notranslate"><span class="pre">FormattedToml.indentation</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.toml_formatter.FormattedToml.sections"><code class="docutils literal notranslate"><span class="pre">FormattedToml.sections</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -139,7 +139,7 @@
       <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
           <li class="breadcrumb-item"><a href="../toml_formatter.html">toml_formatter</a></li>
-      <li class="breadcrumb-item active">toml_formatter.config_parser</li>
+      <li class="breadcrumb-item active">toml_formatter.formatter_options</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -148,18 +148,19 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <h1>Source code for toml_formatter.config_parser</h1><div class="highlight"><pre>
+  <h1>Source code for toml_formatter.formatter_options</h1><div class="highlight"><pre>
 <span></span><span class="ch">#!/usr/bin/env python3</span>
-<span class="sd">&quot;&quot;&quot;Registration and validation of options passed in the config file.&quot;&quot;&quot;</span>
+<span class="sd">&quot;&quot;&quot;Registration and validation of options passed to the formatter.&quot;&quot;&quot;</span>
 <span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">reduce</span>
-<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Literal</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Literal</span><span class="p">,</span> <span class="n">Union</span>
 
 <span class="kn">import</span> <span class="nn">tomli</span>
 <span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">BaseModel</span><span class="p">,</span> <span class="n">NonNegativeInt</span><span class="p">,</span> <span class="n">PositiveInt</span>
 
 
 <div class="viewcode-block" id="FormatterOptions">
-<a class="viewcode-back" href="../../toml_formatter.html#toml_formatter.config_parser.FormatterOptions">[docs]</a>
+<a class="viewcode-back" href="../../toml_formatter.html#toml_formatter.formatter_options.FormatterOptions">[docs]</a>
 <span class="k">class</span> <span class="nc">FormatterOptions</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Model for the formatter&#39;s configuration options.&quot;&quot;&quot;</span>
 
@@ -169,9 +170,9 @@
     <span class="n">loglevel</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;INFO&quot;</span><span class="p">,</span> <span class="s2">&quot;DEBUG&quot;</span><span class="p">,</span> <span class="s2">&quot;WARNING&quot;</span><span class="p">,</span> <span class="s2">&quot;ERROR&quot;</span><span class="p">,</span> <span class="s2">&quot;CRITICAL&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;INFO&quot;</span>
 
 <div class="viewcode-block" id="FormatterOptions.from_toml_file">
-<a class="viewcode-back" href="../../toml_formatter.html#toml_formatter.config_parser.FormatterOptions.from_toml_file">[docs]</a>
+<a class="viewcode-back" href="../../toml_formatter.html#toml_formatter.formatter_options.FormatterOptions.from_toml_file">[docs]</a>
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">from_toml_file</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">from_toml_file</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">]):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Parse a config file and return an instance of the class.&quot;&quot;&quot;</span>
         <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">config_file</span><span class="p">:</span>
             <span class="k">try</span><span class="p">:</span>
@@ -206,6 +207,9 @@
             <span class="k">except</span> <span class="ne">AttributeError</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
                 <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">error</span></div>
 
+
+
+<span class="n">DEFAULT_FORMATTER_OPTIONS</span> <span class="o">=</span> <span class="n">FormatterOptions</span><span class="p">()</span>
 </pre></div>
 
            </div>
@@ -216,7 +220,7 @@
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Paulo V C Medeiros.
-      <span class="lastupdated">Last updated on 2023-10-26T09:55:30Z.
+      <span class="lastupdated">Last updated on 2023-10-26T10:36:54Z.
       </span></p>
   </div>
 
