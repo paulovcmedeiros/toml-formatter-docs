@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>toml_formatter package &mdash; TOML Formatter  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="TOML Formatter" href="readme_link.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            TOML Formatter
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="readme_link.html">README</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">API Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#toml_formatter.GeneralConstants"><code class="docutils literal notranslate"><span class="pre">GeneralConstants</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#toml_formatter.GeneralConstants.PACKAGE_DIRECTORY"><code class="docutils literal notranslate"><span class="pre">GeneralConstants.PACKAGE_DIRECTORY</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#toml_formatter.GeneralConstants.PACKAGE_NAME"><code class="docutils literal notranslate"><span class="pre">GeneralConstants.PACKAGE_NAME</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#toml_formatter.GeneralConstants.VERSION"><code class="docutils literal notranslate"><span class="pre">GeneralConstants.VERSION</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-toml_formatter.argparse_wrapper">toml_formatter.argparse_wrapper module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#toml_formatter.argparse_wrapper.get_parsed_args"><code class="docutils literal notranslate"><span class="pre">get_parsed_args()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-toml_formatter.commands_functions">toml_formatter.commands_functions module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#toml_formatter.commands_functions.check_toml_files_format"><code class="docutils literal notranslate"><span class="pre">check_toml_files_format()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#toml_formatter.commands_functions.show_configs"><code class="docutils literal notranslate"><span class="pre">show_configs()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-toml_formatter.config_parser">toml_formatter.config_parser module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#toml_formatter.config_parser.ParsedConfig"><code class="docutils literal notranslate"><span class="pre">ParsedConfig</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#toml_formatter.config_parser.ParsedConfig.from_toml_file"><code class="docutils literal notranslate"><span class="pre">ParsedConfig.from_toml_file()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#toml_formatter.config_parser.ParsedConfig.indentation"><code class="docutils literal notranslate"><span class="pre">ParsedConfig.indentation</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#toml_formatter.config_parser.ParsedConfig.line_length"><code class="docutils literal notranslate"><span class="pre">ParsedConfig.line_length</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#toml_formatter.config_parser.ParsedConfig.loglevel"><code class="docutils literal notranslate"><span class="pre">ParsedConfig.loglevel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#toml_formatter.config_parser.ParsedConfig.model_config"><code class="docutils literal notranslate"><span class="pre">ParsedConfig.model_config</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#toml_formatter.config_parser.ParsedConfig.model_fields"><code class="docutils literal notranslate"><span class="pre">ParsedConfig.model_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#toml_formatter.config_parser.ParsedConfig.section_order_overrides"><code class="docutils literal notranslate"><span class="pre">ParsedConfig.section_order_overrides</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-toml_formatter.logs">toml_formatter.logs module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#toml_formatter.logs.LogDefaults"><code class="docutils literal notranslate"><span class="pre">LogDefaults</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#toml_formatter.logs.LogDefaults.DIRECTORY"><code class="docutils literal notranslate"><span class="pre">LogDefaults.DIRECTORY</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#toml_formatter.logs.LogDefaults.LEVEL"><code class="docutils literal notranslate"><span class="pre">LogDefaults.LEVEL</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#toml_formatter.logs.LogDefaults.LOGLEVEL_ENVVAR"><code class="docutils literal notranslate"><span class="pre">LogDefaults.LOGLEVEL_ENVVAR</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#toml_formatter.logs.LogDefaults.RETENTION_TIME"><code class="docutils literal notranslate"><span class="pre">LogDefaults.RETENTION_TIME</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#toml_formatter.logs.LogDefaults.SINKS"><code class="docutils literal notranslate"><span class="pre">LogDefaults.SINKS</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#toml_formatter.logs.LogFormatter"><code class="docutils literal notranslate"><span class="pre">LogFormatter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#toml_formatter.logs.LogFormatter.code_location"><code class="docutils literal notranslate"><span class="pre">LogFormatter.code_location</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#toml_formatter.logs.LogFormatter.datetime"><code class="docutils literal notranslate"><span class="pre">LogFormatter.datetime</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#toml_formatter.logs.LogFormatter.format_string"><code class="docutils literal notranslate"><span class="pre">LogFormatter.format_string()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#toml_formatter.logs.LogFormatter.level"><code class="docutils literal notranslate"><span class="pre">LogFormatter.level</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#toml_formatter.logs.LogFormatter.message"><code class="docutils literal notranslate"><span class="pre">LogFormatter.message</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#toml_formatter.logs.LoggerHandlers"><code class="docutils literal notranslate"><span class="pre">LoggerHandlers</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#toml_formatter.logs.LoggerHandlers.add"><code class="docutils literal notranslate"><span class="pre">LoggerHandlers.add()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#toml_formatter.logs.log_elapsed_time"><code class="docutils literal notranslate"><span class="pre">log_elapsed_time()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-toml_formatter.toml_formatter">toml_formatter.toml_formatter module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#toml_formatter.toml_formatter.BaseTomlContentsSequence"><code class="docutils literal notranslate"><span class="pre">BaseTomlContentsSequence</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#toml_formatter.toml_formatter.BaseTomlContentsSequence.data"><code class="docutils literal notranslate"><span class="pre">BaseTomlContentsSequence.data</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#toml_formatter.toml_formatter.BaseTomlContentsSequence.indentation"><code class="docutils literal notranslate"><span class="pre">BaseTomlContentsSequence.indentation</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#toml_formatter.toml_formatter.FormattedToml"><code class="docutils literal notranslate"><span class="pre">FormattedToml</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#toml_formatter.toml_formatter.FormattedToml.from_file"><code class="docutils literal notranslate"><span class="pre">FormattedToml.from_file()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#toml_formatter.toml_formatter.FormattedToml.from_string"><code class="docutils literal notranslate"><span class="pre">FormattedToml.from_string()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#toml_formatter.toml_formatter.FormattedToml.indentation"><code class="docutils literal notranslate"><span class="pre">FormattedToml.indentation</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#toml_formatter.toml_formatter.FormattedToml.sections"><code class="docutils literal notranslate"><span class="pre">FormattedToml.sections</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#toml_formatter.toml_formatter.FormattedTomlFileSection"><code class="docutils literal notranslate"><span class="pre">FormattedTomlFileSection</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#toml_formatter.toml_formatter.FormattedTomlFileSection.data"><code class="docutils literal notranslate"><span class="pre">FormattedTomlFileSection.data</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#toml_formatter.toml_formatter.FormattedTomlFileSection.is_comment"><code class="docutils literal notranslate"><span class="pre">FormattedTomlFileSection.is_comment</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#toml_formatter.toml_formatter.FormattedTomlFileSection.name"><code class="docutils literal notranslate"><span class="pre">FormattedTomlFileSection.name</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#toml_formatter.toml_formatter.ParsedTomlFileEntry"><code class="docutils literal notranslate"><span class="pre">ParsedTomlFileEntry</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#toml_formatter.toml_formatter.ParsedTomlFileEntry.defined_as_key_value"><code class="docutils literal notranslate"><span class="pre">ParsedTomlFileEntry.defined_as_key_value</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#toml_formatter.toml_formatter.ParsedTomlFileEntry.indent"><code class="docutils literal notranslate"><span class="pre">ParsedTomlFileEntry.indent()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#toml_formatter.toml_formatter.ParsedTomlFileEntry.item"><code class="docutils literal notranslate"><span class="pre">ParsedTomlFileEntry.item</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#toml_formatter.toml_formatter.ParsedTomlFileEntry.key"><code class="docutils literal notranslate"><span class="pre">ParsedTomlFileEntry.key</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#toml_formatter.toml_formatter.ParsedTomlFileEntry.toml_doc_obj"><code class="docutils literal notranslate"><span class="pre">ParsedTomlFileEntry.toml_doc_obj</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#toml_formatter.toml_formatter.TomlFileEntriesContainer"><code class="docutils literal notranslate"><span class="pre">TomlFileEntriesContainer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#toml_formatter.toml_formatter.TomlFileEntriesContainer.data"><code class="docutils literal notranslate"><span class="pre">TomlFileEntriesContainer.data</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">TOML Formatter</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">toml_formatter package</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-toml_formatter">
+<span id="toml-formatter-package"></span><h1>toml_formatter package<a class="headerlink" href="#module-toml_formatter" title="Link to this heading"></a></h1>
+<p>Package to run the Destination Earth on Demand Extremes system.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="toml_formatter.GeneralConstants">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GeneralConstants</span></span><a class="reference internal" href="_modules/toml_formatter.html#GeneralConstants"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toml_formatter.GeneralConstants" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>General package-related constants.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toml_formatter.GeneralConstants.PACKAGE_DIRECTORY">
+<span class="sig-name descname"><span class="pre">PACKAGE_DIRECTORY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">PosixPath('/home/runner/work/toml-formatter/toml-formatter/toml_formatter')</span></em><a class="headerlink" href="#toml_formatter.GeneralConstants.PACKAGE_DIRECTORY" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toml_formatter.GeneralConstants.PACKAGE_NAME">
+<span class="sig-name descname"><span class="pre">PACKAGE_NAME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'toml_formatter'</span></em><a class="headerlink" href="#toml_formatter.GeneralConstants.PACKAGE_NAME" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toml_formatter.GeneralConstants.VERSION">
+<span class="sig-name descname"><span class="pre">VERSION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'0.1.0'</span></em><a class="headerlink" href="#toml_formatter.GeneralConstants.VERSION" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-toml_formatter.argparse_wrapper">
+<span id="toml-formatter-argparse-wrapper-module"></span><h2>toml_formatter.argparse_wrapper module<a class="headerlink" href="#module-toml_formatter.argparse_wrapper" title="Link to this heading"></a></h2>
+<p>Wrappers for argparse functionality.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="toml_formatter.argparse_wrapper.get_parsed_args">
+<span class="sig-name descname"><span class="pre">get_parsed_args</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">program_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'toml_formatter'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">argv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toml_formatter/argparse_wrapper.html#get_parsed_args"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toml_formatter.argparse_wrapper.get_parsed_args" title="Link to this definition"></a></dt>
+<dd><p>Get parsed command line arguments.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>program_name</strong> (<em>str</em>) – The name of the program.</p></li>
+<li><p><strong>argv</strong> (<em>list</em>) – A list of passed command line args.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Parsed command line arguments.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>argparse.Namespace</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-toml_formatter.commands_functions">
+<span id="toml-formatter-commands-functions-module"></span><h2>toml_formatter.commands_functions module<a class="headerlink" href="#module-toml_formatter.commands_functions" title="Link to this heading"></a></h2>
+<p>Implement the package’s commands.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="toml_formatter.commands_functions.check_toml_files_format">
+<span class="sig-name descname"><span class="pre">check_toml_files_format</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toml_formatter/commands_functions.html#check_toml_files_format"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toml_formatter.commands_functions.check_toml_files_format" title="Link to this definition"></a></dt>
+<dd><p>Implement the <cite>check</cite> command.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="toml_formatter.commands_functions.show_configs">
+<span class="sig-name descname"><span class="pre">show_configs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toml_formatter/commands_functions.html#show_configs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toml_formatter.commands_functions.show_configs" title="Link to this definition"></a></dt>
+<dd><p>Implement the ‘show_config’ command.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>args</strong> (<em>argparse.Namespace</em>) – Parsed command line arguments.</p></li>
+<li><p><strong>config</strong> (<em>.config_parser.ParsedConfig</em>) – Parsed config file contents.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-toml_formatter.config_parser">
+<span id="toml-formatter-config-parser-module"></span><h2>toml_formatter.config_parser module<a class="headerlink" href="#module-toml_formatter.config_parser" title="Link to this heading"></a></h2>
+<p>Registration and validation of options passed in the config file.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="toml_formatter.config_parser.ParsedConfig">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ParsedConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line_length</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">90</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indentation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">section_order_overrides</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loglevel</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'INFO'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'DEBUG'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'WARNING'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'ERROR'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'CRITICAL'</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'INFO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toml_formatter/config_parser.html#ParsedConfig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toml_formatter.config_parser.ParsedConfig" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseModel</span></code></p>
+<p>Model for the package’s config file.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="toml_formatter.config_parser.ParsedConfig.from_toml_file">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_toml_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toml_formatter/config_parser.html#ParsedConfig.from_toml_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toml_formatter.config_parser.ParsedConfig.from_toml_file" title="Link to this definition"></a></dt>
+<dd><p>Parse a config file and return a <cite>ParsedConfig</cite> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toml_formatter.config_parser.ParsedConfig.indentation">
+<span class="sig-name descname"><span class="pre">indentation</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#toml_formatter.config_parser.ParsedConfig.indentation" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toml_formatter.config_parser.ParsedConfig.line_length">
+<span class="sig-name descname"><span class="pre">line_length</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#toml_formatter.config_parser.ParsedConfig.line_length" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toml_formatter.config_parser.ParsedConfig.loglevel">
+<span class="sig-name descname"><span class="pre">loglevel</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'INFO'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'DEBUG'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'WARNING'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'ERROR'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'CRITICAL'</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#toml_formatter.config_parser.ParsedConfig.loglevel" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toml_formatter.config_parser.ParsedConfig.model_config">
+<span class="sig-name descname"><span class="pre">model_config</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">ConfigDict</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#toml_formatter.config_parser.ParsedConfig.model_config" title="Link to this definition"></a></dt>
+<dd><p>Configuration for the model, should be a dictionary conforming to [<cite>ConfigDict</cite>][pydantic.config.ConfigDict].</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toml_formatter.config_parser.ParsedConfig.model_fields">
+<span class="sig-name descname"><span class="pre">model_fields</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'indentation':</span> <span class="pre">FieldInfo(annotation=int,</span> <span class="pre">required=False,</span> <span class="pre">default=2,</span> <span class="pre">metadata=[Ge(ge=0)]),</span> <span class="pre">'line_length':</span> <span class="pre">FieldInfo(annotation=int,</span> <span class="pre">required=False,</span> <span class="pre">default=90,</span> <span class="pre">metadata=[Gt(gt=0)]),</span> <span class="pre">'loglevel':</span> <span class="pre">FieldInfo(annotation=Literal['INFO',</span> <span class="pre">'DEBUG',</span> <span class="pre">'WARNING',</span> <span class="pre">'ERROR',</span> <span class="pre">'CRITICAL'],</span> <span class="pre">required=False,</span> <span class="pre">default='INFO'),</span> <span class="pre">'section_order_overrides':</span> <span class="pre">FieldInfo(annotation=tuple[str,</span> <span class="pre">...],</span> <span class="pre">required=False,</span> <span class="pre">default=())}</span></em><a class="headerlink" href="#toml_formatter.config_parser.ParsedConfig.model_fields" title="Link to this definition"></a></dt>
+<dd><p>Metadata about the fields defined on the model,
+mapping of field names to [<cite>FieldInfo</cite>][pydantic.fields.FieldInfo].</p>
+<p>This replaces <cite>Model.__fields__</cite> from Pydantic V1.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toml_formatter.config_parser.ParsedConfig.section_order_overrides">
+<span class="sig-name descname"><span class="pre">section_order_overrides</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#toml_formatter.config_parser.ParsedConfig.section_order_overrides" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-toml_formatter.logs">
+<span id="toml-formatter-logs-module"></span><h2>toml_formatter.logs module<a class="headerlink" href="#module-toml_formatter.logs" title="Link to this heading"></a></h2>
+<p>Logging-related classes, functions and definitions.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="toml_formatter.logs.LogDefaults">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">LogDefaults</span></span><a class="reference internal" href="_modules/toml_formatter/logs.html#LogDefaults"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toml_formatter.logs.LogDefaults" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Defaults used for the logging system.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toml_formatter.logs.LogDefaults.DIRECTORY">
+<span class="sig-name descname"><span class="pre">DIRECTORY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">PosixPath('/home/runner/.logs/toml_formatter')</span></em><a class="headerlink" href="#toml_formatter.logs.LogDefaults.DIRECTORY" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toml_formatter.logs.LogDefaults.LEVEL">
+<span class="sig-name descname"><span class="pre">LEVEL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'INFO'</span></em><a class="headerlink" href="#toml_formatter.logs.LogDefaults.LEVEL" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toml_formatter.logs.LogDefaults.LOGLEVEL_ENVVAR">
+<span class="sig-name descname"><span class="pre">LOGLEVEL_ENVVAR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'TOML_FORMATTER_LOGLEVEL'</span></em><a class="headerlink" href="#toml_formatter.logs.LogDefaults.LOGLEVEL_ENVVAR" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toml_formatter.logs.LogDefaults.RETENTION_TIME">
+<span class="sig-name descname"><span class="pre">RETENTION_TIME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'1</span> <span class="pre">week'</span></em><a class="headerlink" href="#toml_formatter.logs.LogDefaults.RETENTION_TIME" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toml_formatter.logs.LogDefaults.SINKS">
+<span class="sig-name descname"><span class="pre">SINKS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'console':</span> <span class="pre">&lt;_io.TextIOWrapper</span> <span class="pre">name='&lt;stderr&gt;'</span> <span class="pre">mode='w'</span> <span class="pre">encoding='utf-8'&gt;,</span> <span class="pre">'logfile':</span> <span class="pre">PosixPath('/home/runner/.logs/toml_formatter/toml_formatter_{time}.log')}</span></em><a class="headerlink" href="#toml_formatter.logs.LogDefaults.SINKS" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="toml_formatter.logs.LogFormatter">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">LogFormatter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datetime</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'&lt;green&gt;{time:YYYY-MM-DD</span> <span class="pre">HH:mm:ss}&lt;/green&gt;'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'&lt;level&gt;{level:</span> <span class="pre">&lt;8}&lt;/level&gt;'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">code_location</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'&lt;cyan&gt;&#64;{name}&lt;/cyan&gt;:&lt;cyan&gt;{function}&lt;/cyan&gt;</span> <span class="pre">&lt;cyan&gt;&lt;{file.path}&lt;/cyan&gt;:&lt;cyan&gt;{line}&gt;:&lt;/cyan&gt;'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'&lt;level&gt;{message}&lt;/level&gt;'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toml_formatter/logs.html#LogFormatter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toml_formatter.logs.LogFormatter" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Helper class to setup logging without poluting the module’s main scope.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toml_formatter.logs.LogFormatter.code_location">
+<span class="sig-name descname"><span class="pre">code_location</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'&lt;cyan&gt;&#64;{name}&lt;/cyan&gt;:&lt;cyan&gt;{function}&lt;/cyan&gt;</span> <span class="pre">&lt;cyan&gt;&lt;{file.path}&lt;/cyan&gt;:&lt;cyan&gt;{line}&gt;:&lt;/cyan&gt;'</span></em><a class="headerlink" href="#toml_formatter.logs.LogFormatter.code_location" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toml_formatter.logs.LogFormatter.datetime">
+<span class="sig-name descname"><span class="pre">datetime</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'&lt;green&gt;{time:YYYY-MM-DD</span> <span class="pre">HH:mm:ss}&lt;/green&gt;'</span></em><a class="headerlink" href="#toml_formatter.logs.LogFormatter.datetime" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toml_formatter.logs.LogFormatter.format_string">
+<span class="sig-name descname"><span class="pre">format_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">loglevel</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toml_formatter/logs.html#LogFormatter.format_string"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toml_formatter.logs.LogFormatter.format_string" title="Link to this definition"></a></dt>
+<dd><p>Return the appropriate fmt string according to log level and fmt opts.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toml_formatter.logs.LogFormatter.level">
+<span class="sig-name descname"><span class="pre">level</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'&lt;level&gt;{level:</span> <span class="pre">&lt;8}&lt;/level&gt;'</span></em><a class="headerlink" href="#toml_formatter.logs.LogFormatter.level" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toml_formatter.logs.LogFormatter.message">
+<span class="sig-name descname"><span class="pre">message</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'&lt;level&gt;{message}&lt;/level&gt;'</span></em><a class="headerlink" href="#toml_formatter.logs.LogFormatter.message" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="toml_formatter.logs.LoggerHandlers">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">LoggerHandlers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">default_level</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'INFO'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">sinks</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toml_formatter/logs.html#LoggerHandlers"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toml_formatter.logs.LoggerHandlers" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code></p>
+<p>Helper class to configure logger handlers when using <cite>loguru.logger.configure</cite>.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="toml_formatter.logs.LoggerHandlers.add">
+<span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sink</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">configs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toml_formatter/logs.html#LoggerHandlers.add"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toml_formatter.logs.LoggerHandlers.add" title="Link to this definition"></a></dt>
+<dd><p>Add handler to instance.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="toml_formatter.logs.log_elapsed_time">
+<span class="sig-name descname"><span class="pre">log_elapsed_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toml_formatter/logs.html#log_elapsed_time"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toml_formatter.logs.log_elapsed_time" title="Link to this definition"></a></dt>
+<dd><p>Return a decorator that logs beginning, exit and elapsed time of function.</p>
+</dd></dl>
+
+</section>
+<section id="module-toml_formatter.toml_formatter">
+<span id="toml-formatter-toml-formatter-module"></span><h2>toml_formatter.toml_formatter module<a class="headerlink" href="#module-toml_formatter.toml_formatter" title="Link to this heading"></a></h2>
+<p>Code for a rudimentary TOML formatter, hopefully covering the most common use cases.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="toml_formatter.toml_formatter.BaseTomlContentsSequence">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BaseTomlContentsSequence</span></span><a class="reference internal" href="_modules/toml_formatter/toml_formatter.html#BaseTomlContentsSequence"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toml_formatter.toml_formatter.BaseTomlContentsSequence" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code></p>
+<p>Basic functionality for the <cite>Sequence</cite>-type classes in the module.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="toml_formatter.toml_formatter.BaseTomlContentsSequence.data">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">data</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span></em><a class="headerlink" href="#toml_formatter.toml_formatter.BaseTomlContentsSequence.data" title="Link to this definition"></a></dt>
+<dd><p>Return data stored in the container. Parsing is performed upon assignment.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toml_formatter.toml_formatter.BaseTomlContentsSequence.indentation">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">indentation</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#toml_formatter.toml_formatter.BaseTomlContentsSequence.indentation" title="Link to this definition"></a></dt>
+<dd><p>Return the indentation applied for each scope level change.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="toml_formatter.toml_formatter.FormattedToml">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">FormattedToml</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">formatting_options</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#toml_formatter.config_parser.ParsedConfig" title="toml_formatter.config_parser.ParsedConfig"><span class="pre">ParsedConfig</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">ParsedConfig(line_length=90,</span> <span class="pre">indentation=2,</span> <span class="pre">section_order_overrides=(),</span> <span class="pre">loglevel='INFO')</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toml_formatter/toml_formatter.html#FormattedToml"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toml_formatter.toml_formatter.FormattedToml" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class to help format the contents of a TOML file.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="toml_formatter.toml_formatter.FormattedToml.from_file">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toml_formatter/toml_formatter.html#FormattedToml.from_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toml_formatter.toml_formatter.FormattedToml.from_file" title="Link to this definition"></a></dt>
+<dd><p>Return a class instance with info read from file located at <cite>path</cite>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toml_formatter.toml_formatter.FormattedToml.from_string">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">toml_string</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toml_formatter/toml_formatter.html#FormattedToml.from_string"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toml_formatter.toml_formatter.FormattedToml.from_string" title="Link to this definition"></a></dt>
+<dd><p>Return a class instance with info retrieved from <cite>toml_string</cite>.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toml_formatter.toml_formatter.FormattedToml.indentation">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">indentation</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#toml_formatter.toml_formatter.FormattedToml.indentation" title="Link to this definition"></a></dt>
+<dd><p>Return the indentation applied for each scope level change.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toml_formatter.toml_formatter.FormattedToml.sections">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">sections</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#toml_formatter.toml_formatter.FormattedTomlFileSection" title="toml_formatter.toml_formatter.FormattedTomlFileSection"><span class="pre">FormattedTomlFileSection</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#toml_formatter.toml_formatter.FormattedToml.sections" title="Link to this definition"></a></dt>
+<dd><p>Return the sections present in the file.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="toml_formatter.toml_formatter.FormattedTomlFileSection">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">FormattedTomlFileSection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">formatting_options</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#toml_formatter.config_parser.ParsedConfig" title="toml_formatter.config_parser.ParsedConfig"><span class="pre">ParsedConfig</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">ParsedConfig(line_length=90,</span> <span class="pre">indentation=2,</span> <span class="pre">section_order_overrides=(),</span> <span class="pre">loglevel='INFO')</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toml_formatter/toml_formatter.html#FormattedTomlFileSection"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toml_formatter.toml_formatter.FormattedTomlFileSection" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#toml_formatter.toml_formatter.BaseTomlContentsSequence" title="toml_formatter.toml_formatter.BaseTomlContentsSequence"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseTomlContentsSequence</span></code></a></p>
+<p>Class that holds and formats data for a single section of a TOML file.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="toml_formatter.toml_formatter.FormattedTomlFileSection.data">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">data</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span></em><a class="headerlink" href="#toml_formatter.toml_formatter.FormattedTomlFileSection.data" title="Link to this definition"></a></dt>
+<dd><p>Return data stored in the container. Parsing is performed upon assignment.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toml_formatter.toml_formatter.FormattedTomlFileSection.is_comment">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_comment</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#toml_formatter.toml_formatter.FormattedTomlFileSection.is_comment" title="Link to this definition"></a></dt>
+<dd><p>Return True if the table only contains comments, and False otherwise.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toml_formatter.toml_formatter.FormattedTomlFileSection.name">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#toml_formatter.toml_formatter.FormattedTomlFileSection.name" title="Link to this definition"></a></dt>
+<dd><p>Return the name of the table.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="toml_formatter.toml_formatter.ParsedTomlFileEntry">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ParsedTomlFileEntry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">single_entry_string</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">formatting_options</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#toml_formatter.config_parser.ParsedConfig" title="toml_formatter.config_parser.ParsedConfig"><span class="pre">ParsedConfig</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">ParsedConfig(line_length=90,</span> <span class="pre">indentation=2,</span> <span class="pre">section_order_overrides=(),</span> <span class="pre">loglevel='INFO')</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toml_formatter/toml_formatter.html#ParsedTomlFileEntry"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toml_formatter.toml_formatter.ParsedTomlFileEntry" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A single, atomic parsed entry in a TOML file.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="toml_formatter.toml_formatter.ParsedTomlFileEntry.defined_as_key_value">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">defined_as_key_value</span></span><a class="headerlink" href="#toml_formatter.toml_formatter.ParsedTomlFileEntry.defined_as_key_value" title="Link to this definition"></a></dt>
+<dd><p>Return True if instance was defined as a key-value pair; False otherwise.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toml_formatter.toml_formatter.ParsedTomlFileEntry.indent">
+<span class="sig-name descname"><span class="pre">indent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">indent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toml_formatter/toml_formatter.html#ParsedTomlFileEntry.indent"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toml_formatter.toml_formatter.ParsedTomlFileEntry.indent" title="Link to this definition"></a></dt>
+<dd><p>Set the number of spaces for the indentation of the atomic entry.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toml_formatter.toml_formatter.ParsedTomlFileEntry.item">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">item</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Item</span></em><a class="headerlink" href="#toml_formatter.toml_formatter.ParsedTomlFileEntry.item" title="Link to this definition"></a></dt>
+<dd><p>Return the <cite>Item</cite> associated with the atomic entry.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toml_formatter.toml_formatter.ParsedTomlFileEntry.key">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">key</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Key</span></em><a class="headerlink" href="#toml_formatter.toml_formatter.ParsedTomlFileEntry.key" title="Link to this definition"></a></dt>
+<dd><p>Return the <cite>Key</cite> associated with the atomic entry.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toml_formatter.toml_formatter.ParsedTomlFileEntry.toml_doc_obj">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">toml_doc_obj</span></span><a class="headerlink" href="#toml_formatter.toml_formatter.ParsedTomlFileEntry.toml_doc_obj" title="Link to this definition"></a></dt>
+<dd><p>Return the <cite>tomlkit.TOMLDocument</cite> obj underneath the instance.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="toml_formatter.toml_formatter.TomlFileEntriesContainer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TomlFileEntriesContainer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toml_formatter/toml_formatter.html#TomlFileEntriesContainer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toml_formatter.toml_formatter.TomlFileEntriesContainer" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#toml_formatter.toml_formatter.BaseTomlContentsSequence" title="toml_formatter.toml_formatter.BaseTomlContentsSequence"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseTomlContentsSequence</span></code></a></p>
+<p>Container for parsed TOML file entries.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="toml_formatter.toml_formatter.TomlFileEntriesContainer.data">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">data</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span></em><a class="headerlink" href="#toml_formatter.toml_formatter.TomlFileEntriesContainer.data" title="Link to this definition"></a></dt>
+<dd><p>Return data stored in the container. Parsing is performed upon assignment.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="readme_link.html" class="btn btn-neutral float-left" title="TOML Formatter" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Paulo V C Medeiros.
+      <span class="lastupdated">Last updated on 2023-10-26T07:16:12Z.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

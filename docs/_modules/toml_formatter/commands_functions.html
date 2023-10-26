@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>toml_formatter.commands_functions &mdash; TOML Formatter  documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            TOML Formatter
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../readme_link.html">README</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../toml_formatter.html">API Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.GeneralConstants"><code class="docutils literal notranslate"><span class="pre">GeneralConstants</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.GeneralConstants.PACKAGE_DIRECTORY"><code class="docutils literal notranslate"><span class="pre">GeneralConstants.PACKAGE_DIRECTORY</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.GeneralConstants.PACKAGE_NAME"><code class="docutils literal notranslate"><span class="pre">GeneralConstants.PACKAGE_NAME</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.GeneralConstants.VERSION"><code class="docutils literal notranslate"><span class="pre">GeneralConstants.VERSION</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../toml_formatter.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../toml_formatter.html#module-toml_formatter.argparse_wrapper">toml_formatter.argparse_wrapper module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.argparse_wrapper.get_parsed_args"><code class="docutils literal notranslate"><span class="pre">get_parsed_args()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../toml_formatter.html#module-toml_formatter.commands_functions">toml_formatter.commands_functions module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.commands_functions.check_toml_files_format"><code class="docutils literal notranslate"><span class="pre">check_toml_files_format()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.commands_functions.show_configs"><code class="docutils literal notranslate"><span class="pre">show_configs()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../toml_formatter.html#module-toml_formatter.config_parser">toml_formatter.config_parser module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.config_parser.ParsedConfig"><code class="docutils literal notranslate"><span class="pre">ParsedConfig</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.config_parser.ParsedConfig.from_toml_file"><code class="docutils literal notranslate"><span class="pre">ParsedConfig.from_toml_file()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.config_parser.ParsedConfig.indentation"><code class="docutils literal notranslate"><span class="pre">ParsedConfig.indentation</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.config_parser.ParsedConfig.line_length"><code class="docutils literal notranslate"><span class="pre">ParsedConfig.line_length</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.config_parser.ParsedConfig.loglevel"><code class="docutils literal notranslate"><span class="pre">ParsedConfig.loglevel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.config_parser.ParsedConfig.model_config"><code class="docutils literal notranslate"><span class="pre">ParsedConfig.model_config</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.config_parser.ParsedConfig.model_fields"><code class="docutils literal notranslate"><span class="pre">ParsedConfig.model_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.config_parser.ParsedConfig.section_order_overrides"><code class="docutils literal notranslate"><span class="pre">ParsedConfig.section_order_overrides</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../toml_formatter.html#module-toml_formatter.logs">toml_formatter.logs module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.logs.LogDefaults"><code class="docutils literal notranslate"><span class="pre">LogDefaults</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.logs.LogDefaults.DIRECTORY"><code class="docutils literal notranslate"><span class="pre">LogDefaults.DIRECTORY</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.logs.LogDefaults.LEVEL"><code class="docutils literal notranslate"><span class="pre">LogDefaults.LEVEL</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.logs.LogDefaults.LOGLEVEL_ENVVAR"><code class="docutils literal notranslate"><span class="pre">LogDefaults.LOGLEVEL_ENVVAR</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.logs.LogDefaults.RETENTION_TIME"><code class="docutils literal notranslate"><span class="pre">LogDefaults.RETENTION_TIME</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.logs.LogDefaults.SINKS"><code class="docutils literal notranslate"><span class="pre">LogDefaults.SINKS</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.logs.LogFormatter"><code class="docutils literal notranslate"><span class="pre">LogFormatter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.logs.LogFormatter.code_location"><code class="docutils literal notranslate"><span class="pre">LogFormatter.code_location</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.logs.LogFormatter.datetime"><code class="docutils literal notranslate"><span class="pre">LogFormatter.datetime</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.logs.LogFormatter.format_string"><code class="docutils literal notranslate"><span class="pre">LogFormatter.format_string()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.logs.LogFormatter.level"><code class="docutils literal notranslate"><span class="pre">LogFormatter.level</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.logs.LogFormatter.message"><code class="docutils literal notranslate"><span class="pre">LogFormatter.message</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.logs.LoggerHandlers"><code class="docutils literal notranslate"><span class="pre">LoggerHandlers</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.logs.LoggerHandlers.add"><code class="docutils literal notranslate"><span class="pre">LoggerHandlers.add()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.logs.log_elapsed_time"><code class="docutils literal notranslate"><span class="pre">log_elapsed_time()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../toml_formatter.html#module-toml_formatter.toml_formatter">toml_formatter.toml_formatter module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.toml_formatter.BaseTomlContentsSequence"><code class="docutils literal notranslate"><span class="pre">BaseTomlContentsSequence</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.toml_formatter.BaseTomlContentsSequence.data"><code class="docutils literal notranslate"><span class="pre">BaseTomlContentsSequence.data</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.toml_formatter.BaseTomlContentsSequence.indentation"><code class="docutils literal notranslate"><span class="pre">BaseTomlContentsSequence.indentation</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.toml_formatter.FormattedToml"><code class="docutils literal notranslate"><span class="pre">FormattedToml</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.toml_formatter.FormattedToml.from_file"><code class="docutils literal notranslate"><span class="pre">FormattedToml.from_file()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.toml_formatter.FormattedToml.from_string"><code class="docutils literal notranslate"><span class="pre">FormattedToml.from_string()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.toml_formatter.FormattedToml.indentation"><code class="docutils literal notranslate"><span class="pre">FormattedToml.indentation</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.toml_formatter.FormattedToml.sections"><code class="docutils literal notranslate"><span class="pre">FormattedToml.sections</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.toml_formatter.FormattedTomlFileSection"><code class="docutils literal notranslate"><span class="pre">FormattedTomlFileSection</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.toml_formatter.FormattedTomlFileSection.data"><code class="docutils literal notranslate"><span class="pre">FormattedTomlFileSection.data</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.toml_formatter.FormattedTomlFileSection.is_comment"><code class="docutils literal notranslate"><span class="pre">FormattedTomlFileSection.is_comment</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.toml_formatter.FormattedTomlFileSection.name"><code class="docutils literal notranslate"><span class="pre">FormattedTomlFileSection.name</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.toml_formatter.ParsedTomlFileEntry"><code class="docutils literal notranslate"><span class="pre">ParsedTomlFileEntry</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.toml_formatter.ParsedTomlFileEntry.defined_as_key_value"><code class="docutils literal notranslate"><span class="pre">ParsedTomlFileEntry.defined_as_key_value</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.toml_formatter.ParsedTomlFileEntry.indent"><code class="docutils literal notranslate"><span class="pre">ParsedTomlFileEntry.indent()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.toml_formatter.ParsedTomlFileEntry.item"><code class="docutils literal notranslate"><span class="pre">ParsedTomlFileEntry.item</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.toml_formatter.ParsedTomlFileEntry.key"><code class="docutils literal notranslate"><span class="pre">ParsedTomlFileEntry.key</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.toml_formatter.ParsedTomlFileEntry.toml_doc_obj"><code class="docutils literal notranslate"><span class="pre">ParsedTomlFileEntry.toml_doc_obj</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.toml_formatter.TomlFileEntriesContainer"><code class="docutils literal notranslate"><span class="pre">TomlFileEntriesContainer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.toml_formatter.TomlFileEntriesContainer.data"><code class="docutils literal notranslate"><span class="pre">TomlFileEntriesContainer.data</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">TOML Formatter</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+          <li class="breadcrumb-item"><a href="../toml_formatter.html">toml_formatter</a></li>
+      <li class="breadcrumb-item active">toml_formatter.commands_functions</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for toml_formatter.commands_functions</h1><div class="highlight"><pre>
+<span></span><span class="ch">#!/usr/bin/env python3</span>
+<span class="sd">&quot;&quot;&quot;Implement the package&#39;s commands.&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">difflib</span>
+<span class="kn">import</span> <span class="nn">itertools</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="kn">import</span> <span class="nn">tomli_w</span>
+
+<span class="kn">from</span> <span class="nn">toml_formatter</span> <span class="kn">import</span> <span class="n">GeneralConstants</span>
+
+<span class="kn">from</span> <span class="nn">.logs</span> <span class="kn">import</span> <span class="n">logger</span>
+<span class="kn">from</span> <span class="nn">.toml_formatter</span> <span class="kn">import</span> <span class="n">FormattedToml</span>
+
+
+<div class="viewcode-block" id="show_configs">
+<a class="viewcode-back" href="../../toml_formatter.html#toml_formatter.commands_functions.show_configs">[docs]</a>
+<span class="k">def</span> <span class="nf">show_configs</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">config</span><span class="p">):</span>  <span class="c1"># noqa: ARG001</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Implement the &#39;show_config&#39; command.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        args (argparse.Namespace): Parsed command line arguments.</span>
+<span class="sd">        config (.config_parser.ParsedConfig): Parsed config file contents.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Printing requested configs...&quot;</span><span class="p">)</span>
+    <span class="n">formatted_toml</span> <span class="o">=</span> <span class="n">FormattedToml</span><span class="o">.</span><span class="n">from_string</span><span class="p">(</span>
+        <span class="n">toml_string</span><span class="o">=</span><span class="n">tomli_w</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">model_dump</span><span class="p">()),</span> <span class="n">formatting_options</span><span class="o">=</span><span class="n">config</span>
+    <span class="p">)</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">formatted_toml</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="check_toml_files_format">
+<a class="viewcode-back" href="../../toml_formatter.html#toml_formatter.commands_functions.check_toml_files_format">[docs]</a>
+<span class="k">def</span> <span class="nf">check_toml_files_format</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">config</span><span class="p">):</span>  <span class="c1"># noqa: PLR0912</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Implement the `check` command.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">_exclude_if_hidden</span><span class="p">(</span><span class="n">fpath</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">include_hidden</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">return</span> <span class="nb">any</span><span class="p">(</span><span class="n">part</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">part</span> <span class="ow">in</span> <span class="n">fpath</span><span class="o">.</span><span class="n">parts</span><span class="p">)</span>
+
+    <span class="n">file_iterators</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">args</span><span class="o">.</span><span class="n">file_paths</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">path</span><span class="o">.</span><span class="n">is_dir</span><span class="p">():</span>
+            <span class="n">file_iterators</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="n">fpath</span>
+                <span class="k">for</span> <span class="n">fpath</span> <span class="ow">in</span> <span class="n">path</span><span class="o">.</span><span class="n">rglob</span><span class="p">(</span><span class="s2">&quot;*&quot;</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">fpath</span><span class="o">.</span><span class="n">suffix</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;.toml&quot;</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">_exclude_if_hidden</span><span class="p">(</span><span class="n">fpath</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">file_iterators</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">path</span><span class="p">])</span>
+
+    <span class="n">n_files</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">files_in_need_of_formatting</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">fpath</span> <span class="ow">in</span> <span class="n">itertools</span><span class="o">.</span><span class="n">chain</span><span class="o">.</span><span class="n">from_iterable</span><span class="p">(</span><span class="n">file_iterators</span><span class="p">):</span>
+        <span class="n">n_files</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="n">formatted_toml</span> <span class="o">=</span> <span class="n">FormattedToml</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="n">fpath</span><span class="p">,</span> <span class="n">formatting_options</span><span class="o">=</span><span class="n">config</span><span class="p">)</span>
+        <span class="n">actual_toml</span> <span class="o">=</span> <span class="n">fpath</span><span class="o">.</span><span class="n">read_text</span><span class="p">()</span>
+
+        <span class="n">file_needs_formatting</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">for</span> <span class="n">diff_line</span> <span class="ow">in</span> <span class="n">difflib</span><span class="o">.</span><span class="n">unified_diff</span><span class="p">(</span>
+            <span class="n">actual_toml</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">),</span>
+            <span class="nb">str</span><span class="p">(</span><span class="n">formatted_toml</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">),</span>
+            <span class="n">fromfile</span><span class="o">=</span><span class="s2">&quot;Original&quot;</span><span class="p">,</span>
+            <span class="n">tofile</span><span class="o">=</span><span class="s2">&quot;Formatted&quot;</span><span class="p">,</span>
+            <span class="n">lineterm</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="p">):</span>
+            <span class="n">file_needs_formatting</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="n">diff_line</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">file_needs_formatting</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">args</span><span class="o">.</span><span class="n">fix_inplace</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;File &lt;</span><span class="si">{}</span><span class="s2">&gt; needs formatting, see diff above.&quot;</span><span class="p">,</span> <span class="n">fpath</span><span class="p">)</span>
+            <span class="n">files_in_need_of_formatting</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fpath</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">show_formatted</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;The formatted version will now be printed to the stdout.&quot;</span><span class="p">)</span>
+                <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">formatted_toml</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">fix_inplace</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Fixing format of file &lt;</span><span class="si">{}</span><span class="s2">&gt; in-place.&quot;</span><span class="p">,</span> <span class="n">fpath</span><span class="p">)</span>
+                <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">fpath</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">formatted_toml</span><span class="p">))</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;File &lt;</span><span class="si">{}</span><span class="s2">&gt; seems to be well-formatted.&quot;</span><span class="p">,</span> <span class="n">fpath</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">files_in_need_of_formatting</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">fix_inplace</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;TOML formatter: </span><span class="si">{}</span><span class="s2"> (out of </span><span class="si">{}</span><span class="s2">) file(s) formatted:&quot;</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">fpath</span> <span class="ow">in</span> <span class="n">files_in_need_of_formatting</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;    </span><span class="si">{}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">fpath</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span>
+                <span class="s2">&quot;TOML formatter: </span><span class="si">{}</span><span class="s2"> (out of </span><span class="si">{}</span><span class="s2">) file(s) seem to need formatting:&quot;</span><span class="p">,</span>
+                <span class="nb">len</span><span class="p">(</span><span class="n">files_in_need_of_formatting</span><span class="p">),</span>
+                <span class="n">n_files</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="k">for</span> <span class="n">fpath</span> <span class="ow">in</span> <span class="n">files_in_need_of_formatting</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;    </span><span class="si">{}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">fpath</span><span class="p">)</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                <span class="s2">&quot;HINT: You may run `</span><span class="si">{}</span><span class="s2"> --fix-inplace SOME/PATH` to have &quot;</span>
+                <span class="o">+</span> <span class="s1">&#39;all TOML files located at &quot;SOME/PATH&quot; formatted automatically.&#39;</span><span class="p">,</span>
+                <span class="n">GeneralConstants</span><span class="o">.</span><span class="n">PACKAGE_NAME</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">),</span>
+            <span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">SystemExit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span></div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Paulo V C Medeiros.
+      <span class="lastupdated">Last updated on 2023-10-26T07:16:12Z.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

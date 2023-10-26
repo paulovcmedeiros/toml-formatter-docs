@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>toml_formatter.logs &mdash; TOML Formatter  documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            TOML Formatter
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../readme_link.html">README</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../toml_formatter.html">API Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.GeneralConstants"><code class="docutils literal notranslate"><span class="pre">GeneralConstants</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.GeneralConstants.PACKAGE_DIRECTORY"><code class="docutils literal notranslate"><span class="pre">GeneralConstants.PACKAGE_DIRECTORY</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.GeneralConstants.PACKAGE_NAME"><code class="docutils literal notranslate"><span class="pre">GeneralConstants.PACKAGE_NAME</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.GeneralConstants.VERSION"><code class="docutils literal notranslate"><span class="pre">GeneralConstants.VERSION</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../toml_formatter.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../toml_formatter.html#module-toml_formatter.argparse_wrapper">toml_formatter.argparse_wrapper module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.argparse_wrapper.get_parsed_args"><code class="docutils literal notranslate"><span class="pre">get_parsed_args()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../toml_formatter.html#module-toml_formatter.commands_functions">toml_formatter.commands_functions module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.commands_functions.check_toml_files_format"><code class="docutils literal notranslate"><span class="pre">check_toml_files_format()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.commands_functions.show_configs"><code class="docutils literal notranslate"><span class="pre">show_configs()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../toml_formatter.html#module-toml_formatter.config_parser">toml_formatter.config_parser module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.config_parser.ParsedConfig"><code class="docutils literal notranslate"><span class="pre">ParsedConfig</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.config_parser.ParsedConfig.from_toml_file"><code class="docutils literal notranslate"><span class="pre">ParsedConfig.from_toml_file()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.config_parser.ParsedConfig.indentation"><code class="docutils literal notranslate"><span class="pre">ParsedConfig.indentation</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.config_parser.ParsedConfig.line_length"><code class="docutils literal notranslate"><span class="pre">ParsedConfig.line_length</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.config_parser.ParsedConfig.loglevel"><code class="docutils literal notranslate"><span class="pre">ParsedConfig.loglevel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.config_parser.ParsedConfig.model_config"><code class="docutils literal notranslate"><span class="pre">ParsedConfig.model_config</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.config_parser.ParsedConfig.model_fields"><code class="docutils literal notranslate"><span class="pre">ParsedConfig.model_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.config_parser.ParsedConfig.section_order_overrides"><code class="docutils literal notranslate"><span class="pre">ParsedConfig.section_order_overrides</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../toml_formatter.html#module-toml_formatter.logs">toml_formatter.logs module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.logs.LogDefaults"><code class="docutils literal notranslate"><span class="pre">LogDefaults</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.logs.LogDefaults.DIRECTORY"><code class="docutils literal notranslate"><span class="pre">LogDefaults.DIRECTORY</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.logs.LogDefaults.LEVEL"><code class="docutils literal notranslate"><span class="pre">LogDefaults.LEVEL</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.logs.LogDefaults.LOGLEVEL_ENVVAR"><code class="docutils literal notranslate"><span class="pre">LogDefaults.LOGLEVEL_ENVVAR</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.logs.LogDefaults.RETENTION_TIME"><code class="docutils literal notranslate"><span class="pre">LogDefaults.RETENTION_TIME</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.logs.LogDefaults.SINKS"><code class="docutils literal notranslate"><span class="pre">LogDefaults.SINKS</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.logs.LogFormatter"><code class="docutils literal notranslate"><span class="pre">LogFormatter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.logs.LogFormatter.code_location"><code class="docutils literal notranslate"><span class="pre">LogFormatter.code_location</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.logs.LogFormatter.datetime"><code class="docutils literal notranslate"><span class="pre">LogFormatter.datetime</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.logs.LogFormatter.format_string"><code class="docutils literal notranslate"><span class="pre">LogFormatter.format_string()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.logs.LogFormatter.level"><code class="docutils literal notranslate"><span class="pre">LogFormatter.level</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.logs.LogFormatter.message"><code class="docutils literal notranslate"><span class="pre">LogFormatter.message</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.logs.LoggerHandlers"><code class="docutils literal notranslate"><span class="pre">LoggerHandlers</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.logs.LoggerHandlers.add"><code class="docutils literal notranslate"><span class="pre">LoggerHandlers.add()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.logs.log_elapsed_time"><code class="docutils literal notranslate"><span class="pre">log_elapsed_time()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../toml_formatter.html#module-toml_formatter.toml_formatter">toml_formatter.toml_formatter module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.toml_formatter.BaseTomlContentsSequence"><code class="docutils literal notranslate"><span class="pre">BaseTomlContentsSequence</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.toml_formatter.BaseTomlContentsSequence.data"><code class="docutils literal notranslate"><span class="pre">BaseTomlContentsSequence.data</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.toml_formatter.BaseTomlContentsSequence.indentation"><code class="docutils literal notranslate"><span class="pre">BaseTomlContentsSequence.indentation</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.toml_formatter.FormattedToml"><code class="docutils literal notranslate"><span class="pre">FormattedToml</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.toml_formatter.FormattedToml.from_file"><code class="docutils literal notranslate"><span class="pre">FormattedToml.from_file()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.toml_formatter.FormattedToml.from_string"><code class="docutils literal notranslate"><span class="pre">FormattedToml.from_string()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.toml_formatter.FormattedToml.indentation"><code class="docutils literal notranslate"><span class="pre">FormattedToml.indentation</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.toml_formatter.FormattedToml.sections"><code class="docutils literal notranslate"><span class="pre">FormattedToml.sections</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.toml_formatter.FormattedTomlFileSection"><code class="docutils literal notranslate"><span class="pre">FormattedTomlFileSection</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.toml_formatter.FormattedTomlFileSection.data"><code class="docutils literal notranslate"><span class="pre">FormattedTomlFileSection.data</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.toml_formatter.FormattedTomlFileSection.is_comment"><code class="docutils literal notranslate"><span class="pre">FormattedTomlFileSection.is_comment</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.toml_formatter.FormattedTomlFileSection.name"><code class="docutils literal notranslate"><span class="pre">FormattedTomlFileSection.name</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.toml_formatter.ParsedTomlFileEntry"><code class="docutils literal notranslate"><span class="pre">ParsedTomlFileEntry</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.toml_formatter.ParsedTomlFileEntry.defined_as_key_value"><code class="docutils literal notranslate"><span class="pre">ParsedTomlFileEntry.defined_as_key_value</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.toml_formatter.ParsedTomlFileEntry.indent"><code class="docutils literal notranslate"><span class="pre">ParsedTomlFileEntry.indent()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.toml_formatter.ParsedTomlFileEntry.item"><code class="docutils literal notranslate"><span class="pre">ParsedTomlFileEntry.item</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.toml_formatter.ParsedTomlFileEntry.key"><code class="docutils literal notranslate"><span class="pre">ParsedTomlFileEntry.key</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.toml_formatter.ParsedTomlFileEntry.toml_doc_obj"><code class="docutils literal notranslate"><span class="pre">ParsedTomlFileEntry.toml_doc_obj</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.toml_formatter.TomlFileEntriesContainer"><code class="docutils literal notranslate"><span class="pre">TomlFileEntriesContainer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.toml_formatter.TomlFileEntriesContainer.data"><code class="docutils literal notranslate"><span class="pre">TomlFileEntriesContainer.data</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">TOML Formatter</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+          <li class="breadcrumb-item"><a href="../toml_formatter.html">toml_formatter</a></li>
+      <li class="breadcrumb-item active">toml_formatter.logs</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for toml_formatter.logs</h1><div class="highlight"><pre>
+<span></span><span class="ch">#!/usr/bin/env python3</span>
+<span class="sd">&quot;&quot;&quot;Logging-related classes, functions and definitions.&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">pprint</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">collections.abc</span> <span class="kn">import</span> <span class="n">Sequence</span>
+<span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">wraps</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+
+<span class="kn">import</span> <span class="nn">humanize</span>
+<span class="kn">from</span> <span class="nn">loguru</span> <span class="kn">import</span> <span class="n">logger</span>
+
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">GeneralConstants</span>
+
+
+<div class="viewcode-block" id="LogDefaults">
+<a class="viewcode-back" href="../../toml_formatter.html#toml_formatter.logs.LogDefaults">[docs]</a>
+<span class="k">class</span> <span class="nc">LogDefaults</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Defaults used for the logging system.&quot;&quot;&quot;</span>
+
+    <span class="n">LOGLEVEL_ENVVAR</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">GeneralConstants</span><span class="o">.</span><span class="n">PACKAGE_NAME</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}</span><span class="s2">_LOGLEVEL&quot;</span>
+    <span class="n">LEVEL</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">LOGLEVEL_ENVVAR</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;LOGURU_LEVEL&quot;</span><span class="p">,</span> <span class="s2">&quot;INFO&quot;</span><span class="p">))</span>
+    <span class="n">DIRECTORY</span> <span class="o">=</span> <span class="n">Path</span><span class="p">()</span><span class="o">.</span><span class="n">home</span><span class="p">()</span> <span class="o">/</span> <span class="s2">&quot;.logs&quot;</span> <span class="o">/</span> <span class="n">GeneralConstants</span><span class="o">.</span><span class="n">PACKAGE_NAME</span>
+    <span class="n">RETENTION_TIME</span> <span class="o">=</span> <span class="s2">&quot;1 week&quot;</span>
+    <span class="n">SINKS</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;console&quot;</span><span class="p">:</span> <span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">,</span>
+        <span class="s2">&quot;logfile&quot;</span><span class="p">:</span> <span class="n">DIRECTORY</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">GeneralConstants</span><span class="o">.</span><span class="n">PACKAGE_NAME</span><span class="si">}</span><span class="s2">_</span><span class="se">{{</span><span class="s2">time</span><span class="se">}}</span><span class="s2">.log&quot;</span><span class="p">,</span>
+    <span class="p">}</span></div>
+
+
+
+<div class="viewcode-block" id="LogFormatter">
+<a class="viewcode-back" href="../../toml_formatter.html#toml_formatter.logs.LogFormatter">[docs]</a>
+<span class="nd">@dataclass</span>
+<span class="k">class</span> <span class="nc">LogFormatter</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Helper class to setup logging without poluting the module&#39;s main scope.&quot;&quot;&quot;</span>
+
+    <span class="n">datetime</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&lt;green&gt;{time:YYYY-MM-DD HH:mm:ss}&lt;/green&gt;&quot;</span>
+    <span class="n">level</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&lt;level&gt;</span><span class="si">{level: &lt;8}</span><span class="s2">&lt;/level&gt;&quot;</span>
+    <span class="n">code_location</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="s2">&quot;&lt;cyan&gt;@</span><span class="si">{name}</span><span class="s2">&lt;/cyan&gt;:&lt;cyan&gt;</span><span class="si">{function}</span><span class="s2">&lt;/cyan&gt; &quot;</span>
+        <span class="o">+</span> <span class="s2">&quot;&lt;cyan&gt;&lt;</span><span class="si">{file.path}</span><span class="s2">&lt;/cyan&gt;:&lt;cyan&gt;</span><span class="si">{line}</span><span class="s2">&gt;:&lt;/cyan&gt;&quot;</span>
+    <span class="p">)</span>
+    <span class="n">message</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&lt;level&gt;</span><span class="si">{message}</span><span class="s2">&lt;/level&gt;&quot;</span>
+
+<div class="viewcode-block" id="LogFormatter.format_string">
+<a class="viewcode-back" href="../../toml_formatter.html#toml_formatter.logs.LogFormatter.format_string">[docs]</a>
+    <span class="k">def</span> <span class="nf">format_string</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">loglevel</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the appropriate fmt string according to log level and fmt opts.&quot;&quot;&quot;</span>
+        <span class="n">rtn</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">datetime</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">level</span><span class="si">}</span><span class="s2"> | &quot;</span>
+
+        <span class="n">loglevel</span> <span class="o">=</span> <span class="n">logger</span><span class="o">.</span><span class="n">level</span><span class="p">(</span><span class="n">loglevel</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+        <span class="k">if</span> <span class="n">loglevel</span><span class="o">.</span><span class="n">no</span> <span class="o">&lt;</span> <span class="mi">20</span><span class="p">:</span>  <span class="c1"># noqa: PLR2004</span>
+            <span class="c1"># More detail than just &quot;INFO&quot;</span>
+            <span class="n">rtn</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">code_location</span><span class="si">}</span><span class="se">\n</span><span class="si">{</span><span class="n">rtn</span><span class="si">}</span><span class="s2">&quot;</span>
+
+        <span class="n">rtn</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">message</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="k">return</span> <span class="n">rtn</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="LoggerHandlers">
+<a class="viewcode-back" href="../../toml_formatter.html#toml_formatter.logs.LoggerHandlers">[docs]</a>
+<span class="k">class</span> <span class="nc">LoggerHandlers</span><span class="p">(</span><span class="n">Sequence</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Helper class to configure logger handlers when using `loguru.logger.configure`.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">default_level</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">LogDefaults</span><span class="o">.</span><span class="n">LEVEL</span><span class="p">,</span> <span class="o">**</span><span class="n">sinks</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialise instance with default loglevel and sinks.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">default_level</span> <span class="o">=</span> <span class="n">default_level</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">handlers</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">sink</span> <span class="ow">in</span> <span class="p">{</span><span class="o">**</span><span class="n">LogDefaults</span><span class="o">.</span><span class="n">SINKS</span><span class="p">,</span> <span class="o">**</span><span class="n">sinks</span><span class="p">}</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">sink</span><span class="o">=</span><span class="n">sink</span><span class="p">)</span>
+
+<div class="viewcode-block" id="LoggerHandlers.add">
+<a class="viewcode-back" href="../../toml_formatter.html#toml_formatter.logs.LoggerHandlers.add">[docs]</a>
+    <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">sink</span><span class="p">,</span> <span class="o">**</span><span class="n">configs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add handler to instance.&quot;&quot;&quot;</span>
+        <span class="n">configs</span><span class="p">[</span><span class="s2">&quot;level&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">configs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;level&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">default_level</span><span class="p">)</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+        <span class="n">configs</span><span class="p">[</span><span class="s2">&quot;format&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">configs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span>
+            <span class="s2">&quot;format&quot;</span><span class="p">,</span> <span class="n">LogFormatter</span><span class="p">()</span><span class="o">.</span><span class="n">format_string</span><span class="p">(</span><span class="n">configs</span><span class="p">[</span><span class="s2">&quot;level&quot;</span><span class="p">])</span>
+        <span class="p">)</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">configs</span><span class="p">[</span><span class="s2">&quot;sink&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">sink</span><span class="p">)</span>
+            <span class="n">configs</span><span class="p">[</span><span class="s2">&quot;retention&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">configs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;retention&quot;</span><span class="p">,</span> <span class="n">LogDefaults</span><span class="o">.</span><span class="n">RETENTION_TIME</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+            <span class="n">configs</span><span class="p">[</span><span class="s2">&quot;sink&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sink</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">handlers</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">configs</span></div>
+
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">pprint</span><span class="o">.</span><span class="n">pformat</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handlers</span><span class="p">)</span>
+
+    <span class="c1"># Implement abstract methods</span>
+    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handlers</span><span class="o">.</span><span class="n">values</span><span class="p">())[</span><span class="n">item</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handlers</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="log_elapsed_time">
+<a class="viewcode-back" href="../../toml_formatter.html#toml_formatter.logs.log_elapsed_time">[docs]</a>
+<span class="k">def</span> <span class="nf">log_elapsed_time</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return a decorator that logs beginning, exit and elapsed time of function.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">log_elapsed_time_decorator</span><span class="p">(</span><span class="n">function</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Wrap `function` and log beginning, exit and elapsed time.&quot;&quot;&quot;</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="n">function</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">function</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;main&quot;</span><span class="p">:</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">GeneralConstants</span><span class="o">.</span><span class="n">PACKAGE_NAME</span><span class="si">}</span><span class="s2"> v</span><span class="si">{</span><span class="n">GeneralConstants</span><span class="o">.</span><span class="n">VERSION</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="n">cmd</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">GeneralConstants</span><span class="o">.</span><span class="n">PACKAGE_NAME</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:]])</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1"> --&gt; &quot;</span><span class="si">{</span><span class="n">cmd</span><span class="si">}</span><span class="s1">&quot;&#39;</span>
+
+        <span class="nd">@wraps</span><span class="p">(</span><span class="n">function</span><span class="p">)</span>
+        <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">opt</span><span class="p">(</span><span class="n">colors</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;&lt;blue&gt;Start </span><span class="si">{}</span><span class="s2">&lt;/blue&gt;&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+
+            <span class="n">t_start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+            <span class="n">function_rtn</span> <span class="o">=</span> <span class="n">function</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="n">elapsed</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">t_start</span>
+
+            <span class="k">if</span> <span class="n">elapsed</span> <span class="o">&lt;</span> <span class="mi">60</span><span class="p">:</span>  <span class="c1"># noqa: PLR2004</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">opt</span><span class="p">(</span><span class="n">colors</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                    <span class="s2">&quot;&lt;blue&gt;Leaving </span><span class="si">{}</span><span class="s2">. Total runtime: </span><span class="si">{:.2f}</span><span class="s2">s.&lt;/blue&gt;&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">elapsed</span>
+                <span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">opt</span><span class="p">(</span><span class="n">colors</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                    <span class="s2">&quot;&lt;blue&gt;Leaving </span><span class="si">{}</span><span class="s2">. Total runtime: </span><span class="si">{}</span><span class="s2">s (~</span><span class="si">{}</span><span class="s2">).&lt;/blue&gt;&quot;</span><span class="p">,</span>
+                    <span class="n">name</span><span class="p">,</span>
+                    <span class="n">elapsed</span><span class="p">,</span>
+                    <span class="n">humanize</span><span class="o">.</span><span class="n">precisedelta</span><span class="p">(</span><span class="n">elapsed</span><span class="p">),</span>
+                <span class="p">)</span>
+
+            <span class="k">return</span> <span class="n">function_rtn</span>
+
+        <span class="k">return</span> <span class="n">wrapper</span>
+
+    <span class="k">return</span> <span class="n">log_elapsed_time_decorator</span></div>
+
+
+
+<span class="n">logger</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="n">handlers</span><span class="o">=</span><span class="n">LoggerHandlers</span><span class="p">())</span>
+<span class="c1"># Disable logger by defalt in case the project is used as a library. Leave it for the user</span>
+<span class="c1"># to enable it if they so wish.</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">disable</span><span class="p">(</span><span class="n">GeneralConstants</span><span class="o">.</span><span class="n">PACKAGE_NAME</span><span class="p">)</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Paulo V C Medeiros.
+      <span class="lastupdated">Last updated on 2023-10-26T07:16:12Z.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

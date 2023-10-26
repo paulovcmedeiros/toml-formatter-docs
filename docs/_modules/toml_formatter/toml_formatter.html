@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>toml_formatter.toml_formatter &mdash; TOML Formatter  documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            TOML Formatter
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../readme_link.html">README</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../toml_formatter.html">API Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.GeneralConstants"><code class="docutils literal notranslate"><span class="pre">GeneralConstants</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.GeneralConstants.PACKAGE_DIRECTORY"><code class="docutils literal notranslate"><span class="pre">GeneralConstants.PACKAGE_DIRECTORY</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.GeneralConstants.PACKAGE_NAME"><code class="docutils literal notranslate"><span class="pre">GeneralConstants.PACKAGE_NAME</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.GeneralConstants.VERSION"><code class="docutils literal notranslate"><span class="pre">GeneralConstants.VERSION</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../toml_formatter.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../toml_formatter.html#module-toml_formatter.argparse_wrapper">toml_formatter.argparse_wrapper module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.argparse_wrapper.get_parsed_args"><code class="docutils literal notranslate"><span class="pre">get_parsed_args()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../toml_formatter.html#module-toml_formatter.commands_functions">toml_formatter.commands_functions module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.commands_functions.check_toml_files_format"><code class="docutils literal notranslate"><span class="pre">check_toml_files_format()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.commands_functions.show_configs"><code class="docutils literal notranslate"><span class="pre">show_configs()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../toml_formatter.html#module-toml_formatter.config_parser">toml_formatter.config_parser module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.config_parser.ParsedConfig"><code class="docutils literal notranslate"><span class="pre">ParsedConfig</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.config_parser.ParsedConfig.from_toml_file"><code class="docutils literal notranslate"><span class="pre">ParsedConfig.from_toml_file()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.config_parser.ParsedConfig.indentation"><code class="docutils literal notranslate"><span class="pre">ParsedConfig.indentation</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.config_parser.ParsedConfig.line_length"><code class="docutils literal notranslate"><span class="pre">ParsedConfig.line_length</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.config_parser.ParsedConfig.loglevel"><code class="docutils literal notranslate"><span class="pre">ParsedConfig.loglevel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.config_parser.ParsedConfig.model_config"><code class="docutils literal notranslate"><span class="pre">ParsedConfig.model_config</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.config_parser.ParsedConfig.model_fields"><code class="docutils literal notranslate"><span class="pre">ParsedConfig.model_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.config_parser.ParsedConfig.section_order_overrides"><code class="docutils literal notranslate"><span class="pre">ParsedConfig.section_order_overrides</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../toml_formatter.html#module-toml_formatter.logs">toml_formatter.logs module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.logs.LogDefaults"><code class="docutils literal notranslate"><span class="pre">LogDefaults</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.logs.LogDefaults.DIRECTORY"><code class="docutils literal notranslate"><span class="pre">LogDefaults.DIRECTORY</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.logs.LogDefaults.LEVEL"><code class="docutils literal notranslate"><span class="pre">LogDefaults.LEVEL</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.logs.LogDefaults.LOGLEVEL_ENVVAR"><code class="docutils literal notranslate"><span class="pre">LogDefaults.LOGLEVEL_ENVVAR</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.logs.LogDefaults.RETENTION_TIME"><code class="docutils literal notranslate"><span class="pre">LogDefaults.RETENTION_TIME</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.logs.LogDefaults.SINKS"><code class="docutils literal notranslate"><span class="pre">LogDefaults.SINKS</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.logs.LogFormatter"><code class="docutils literal notranslate"><span class="pre">LogFormatter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.logs.LogFormatter.code_location"><code class="docutils literal notranslate"><span class="pre">LogFormatter.code_location</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.logs.LogFormatter.datetime"><code class="docutils literal notranslate"><span class="pre">LogFormatter.datetime</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.logs.LogFormatter.format_string"><code class="docutils literal notranslate"><span class="pre">LogFormatter.format_string()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.logs.LogFormatter.level"><code class="docutils literal notranslate"><span class="pre">LogFormatter.level</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.logs.LogFormatter.message"><code class="docutils literal notranslate"><span class="pre">LogFormatter.message</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.logs.LoggerHandlers"><code class="docutils literal notranslate"><span class="pre">LoggerHandlers</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.logs.LoggerHandlers.add"><code class="docutils literal notranslate"><span class="pre">LoggerHandlers.add()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.logs.log_elapsed_time"><code class="docutils literal notranslate"><span class="pre">log_elapsed_time()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../toml_formatter.html#module-toml_formatter.toml_formatter">toml_formatter.toml_formatter module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.toml_formatter.BaseTomlContentsSequence"><code class="docutils literal notranslate"><span class="pre">BaseTomlContentsSequence</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.toml_formatter.BaseTomlContentsSequence.data"><code class="docutils literal notranslate"><span class="pre">BaseTomlContentsSequence.data</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.toml_formatter.BaseTomlContentsSequence.indentation"><code class="docutils literal notranslate"><span class="pre">BaseTomlContentsSequence.indentation</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.toml_formatter.FormattedToml"><code class="docutils literal notranslate"><span class="pre">FormattedToml</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.toml_formatter.FormattedToml.from_file"><code class="docutils literal notranslate"><span class="pre">FormattedToml.from_file()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.toml_formatter.FormattedToml.from_string"><code class="docutils literal notranslate"><span class="pre">FormattedToml.from_string()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.toml_formatter.FormattedToml.indentation"><code class="docutils literal notranslate"><span class="pre">FormattedToml.indentation</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.toml_formatter.FormattedToml.sections"><code class="docutils literal notranslate"><span class="pre">FormattedToml.sections</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.toml_formatter.FormattedTomlFileSection"><code class="docutils literal notranslate"><span class="pre">FormattedTomlFileSection</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.toml_formatter.FormattedTomlFileSection.data"><code class="docutils literal notranslate"><span class="pre">FormattedTomlFileSection.data</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.toml_formatter.FormattedTomlFileSection.is_comment"><code class="docutils literal notranslate"><span class="pre">FormattedTomlFileSection.is_comment</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.toml_formatter.FormattedTomlFileSection.name"><code class="docutils literal notranslate"><span class="pre">FormattedTomlFileSection.name</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.toml_formatter.ParsedTomlFileEntry"><code class="docutils literal notranslate"><span class="pre">ParsedTomlFileEntry</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.toml_formatter.ParsedTomlFileEntry.defined_as_key_value"><code class="docutils literal notranslate"><span class="pre">ParsedTomlFileEntry.defined_as_key_value</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.toml_formatter.ParsedTomlFileEntry.indent"><code class="docutils literal notranslate"><span class="pre">ParsedTomlFileEntry.indent()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.toml_formatter.ParsedTomlFileEntry.item"><code class="docutils literal notranslate"><span class="pre">ParsedTomlFileEntry.item</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.toml_formatter.ParsedTomlFileEntry.key"><code class="docutils literal notranslate"><span class="pre">ParsedTomlFileEntry.key</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.toml_formatter.ParsedTomlFileEntry.toml_doc_obj"><code class="docutils literal notranslate"><span class="pre">ParsedTomlFileEntry.toml_doc_obj</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.toml_formatter.TomlFileEntriesContainer"><code class="docutils literal notranslate"><span class="pre">TomlFileEntriesContainer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../toml_formatter.html#toml_formatter.toml_formatter.TomlFileEntriesContainer.data"><code class="docutils literal notranslate"><span class="pre">TomlFileEntriesContainer.data</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">TOML Formatter</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+          <li class="breadcrumb-item"><a href="../toml_formatter.html">toml_formatter</a></li>
+      <li class="breadcrumb-item active">toml_formatter.toml_formatter</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for toml_formatter.toml_formatter</h1><div class="highlight"><pre>
+<span></span><span class="ch">#!/usr/bin/env python3</span>
+<span class="sd">&quot;&quot;&quot;Code for a rudimentary TOML formatter, hopefully covering the most common use cases.&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">collections.abc</span>
+<span class="kn">import</span> <span class="nn">contextlib</span>
+<span class="kn">import</span> <span class="nn">csv</span>
+<span class="kn">import</span> <span class="nn">itertools</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">cached_property</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Sequence</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Union</span>
+
+<span class="kn">import</span> <span class="nn">tomli</span>
+<span class="kn">import</span> <span class="nn">tomlkit</span>
+<span class="kn">from</span> <span class="nn">tomlkit.exceptions</span> <span class="kn">import</span> <span class="n">UnexpectedCharError</span><span class="p">,</span> <span class="n">UnexpectedEofError</span>
+<span class="kn">from</span> <span class="nn">tomlkit.items</span> <span class="kn">import</span> <span class="n">AoT</span><span class="p">,</span> <span class="n">Comment</span><span class="p">,</span> <span class="n">Item</span><span class="p">,</span> <span class="n">Key</span><span class="p">,</span> <span class="n">Table</span><span class="p">,</span> <span class="n">Whitespace</span>
+
+<span class="kn">from</span> <span class="nn">.config_parser</span> <span class="kn">import</span> <span class="n">ParsedConfig</span>
+
+<span class="n">DEFAULT_CONFIG</span> <span class="o">=</span> <span class="n">ParsedConfig</span><span class="p">()</span>
+
+
+<div class="viewcode-block" id="BaseTomlContentsSequence">
+<a class="viewcode-back" href="../../toml_formatter.html#toml_formatter.toml_formatter.BaseTomlContentsSequence">[docs]</a>
+<span class="k">class</span> <span class="nc">BaseTomlContentsSequence</span><span class="p">(</span><span class="n">collections</span><span class="o">.</span><span class="n">abc</span><span class="o">.</span><span class="n">Sequence</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Basic functionality for the `Sequence`-type classes in the module.&quot;&quot;&quot;</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">data</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return data stored in the container. Parsing is performed upon assignment.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;_data&quot;</span><span class="p">,</span> <span class="p">())</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">indentation</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the indentation applied for each scope level change.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_indentation</span>
+
+    <span class="nd">@indentation</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">indentation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_indentation</span> <span class="o">=</span> <span class="n">new</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span>  <span class="c1"># Trigger data restructuring</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span> <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">)</span>
+
+    <span class="c1"># Implement abstract methods</span>
+    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">item</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="ParsedTomlFileEntry">
+<a class="viewcode-back" href="../../toml_formatter.html#toml_formatter.toml_formatter.ParsedTomlFileEntry">[docs]</a>
+<span class="k">class</span> <span class="nc">ParsedTomlFileEntry</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A single, atomic parsed entry in a TOML file.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">single_entry_string</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">formatting_options</span><span class="p">:</span> <span class="n">ParsedConfig</span> <span class="o">=</span> <span class="n">DEFAULT_CONFIG</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialise instance.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">toml_doc_obj</span> <span class="o">=</span> <span class="n">tomlkit</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">single_entry_string</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">formatting_options</span> <span class="o">=</span> <span class="n">formatting_options</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">toml_doc_obj</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the `tomlkit.TOMLDocument` obj underneath the instance.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_toml_doc_obj</span>
+
+    <span class="nd">@toml_doc_obj</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">toml_doc_obj</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_toml_doc_obj</span> <span class="o">=</span> <span class="n">new</span>
+
+        <span class="n">trivia</span> <span class="o">=</span> <span class="kc">None</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">item</span><span class="p">,</span> <span class="n">Whitespace</span><span class="p">)</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">item</span><span class="o">.</span><span class="n">trivia</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="o">=</span> <span class="n">tomlkit</span><span class="o">.</span><span class="n">key_value</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
+        <span class="k">except</span> <span class="n">tomlkit</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">EmptyKeyError</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_defined_as_key_value</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">item</span><span class="p">,</span> <span class="p">(</span><span class="n">Table</span><span class="p">,</span> <span class="n">AoT</span><span class="p">)):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_toml_doc_obj</span> <span class="o">=</span> <span class="n">tomlkit</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">tomlkit</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">toml_doc_obj</span><span class="o">.</span><span class="n">value</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_defined_as_key_value</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">toml_doc_obj</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">tomlkit</span><span class="o">.</span><span class="n">items</span><span class="o">.</span><span class="n">InlineTable</span><span class="p">):</span>
+                <span class="n">new_table</span> <span class="o">=</span> <span class="n">tomlkit</span><span class="o">.</span><span class="n">inline_table</span><span class="p">()</span>
+                <span class="n">new_table</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">value</span><span class="o">.</span><span class="n">unwrap</span><span class="p">())</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="n">new_table</span>
+            <span class="k">elif</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">unwrap</span><span class="p">()</span>
+
+            <span class="n">stripped_key_components</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="n">sub_k</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+                <span class="k">for</span> <span class="n">sub_k</span> <span class="ow">in</span> <span class="nb">next</span><span class="p">(</span>
+                    <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">([</span><span class="n">key</span><span class="o">.</span><span class="n">as_string</span><span class="p">()],</span> <span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="n">skipinitialspace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                <span class="p">)</span>
+            <span class="p">]</span>
+
+            <span class="n">new_key</span> <span class="o">=</span> <span class="n">tomlkit</span><span class="o">.</span><span class="n">key</span><span class="p">(</span><span class="n">stripped_key_components</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">toml_doc_obj</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">trivia</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">item</span><span class="o">.</span><span class="n">trivia</span><span class="o">.</span><span class="vm">__dict__</span> <span class="o">=</span> <span class="n">trivia</span><span class="o">.</span><span class="vm">__dict__</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_fix_spaces_around_comments</span><span class="p">()</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">key</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Key</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the `Key` associated with the atomic entry.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tomlkit_doc_obj_body</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">defined_as_key_value</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return True if instance was defined as a key-value pair; False otherwise.&quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_defined_as_key_value</span>
+        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">item</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Item</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the `Item` associated with the atomic entry.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tomlkit_doc_obj_body</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+
+<div class="viewcode-block" id="ParsedTomlFileEntry.indent">
+<a class="viewcode-back" href="../../toml_formatter.html#toml_formatter.toml_formatter.ParsedTomlFileEntry.indent">[docs]</a>
+    <span class="k">def</span> <span class="nf">indent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">indent</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Set the number of spaces for the indentation of the atomic entry.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_indent_level</span> <span class="o">=</span> <span class="n">indent</span>
+        <span class="n">_indent_atomic_toml_entry</span><span class="p">(</span><span class="n">entry</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="n">indent</span><span class="p">)</span></div>
+
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">_tomlkit_doc_obj_body</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">[</span>
+            <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">toml_doc_obj</span><span class="o">.</span><span class="n">body</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">tomlkit</span><span class="o">.</span><span class="n">items</span><span class="o">.</span><span class="n">Null</span><span class="p">)</span>
+        <span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">_fix_spaces_around_comments</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">item</span><span class="p">,</span> <span class="p">(</span><span class="n">Whitespace</span><span class="p">,</span> <span class="n">Comment</span><span class="p">))</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">item</span><span class="o">.</span><span class="n">trivia</span><span class="o">.</span><span class="n">comment</span><span class="p">:</span>
+            <span class="n">comment_text</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">item</span><span class="o">.</span><span class="n">trivia</span><span class="o">.</span><span class="n">comment</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;#&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">comment_text</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;#&quot;</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">item</span><span class="o">.</span><span class="n">trivia</span><span class="o">.</span><span class="n">comment</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;# </span><span class="si">{</span><span class="n">comment_text</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">item</span><span class="o">.</span><span class="n">trivia</span><span class="o">.</span><span class="n">comment_ws</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span>
+
+    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">ParsedTomlFileEntry</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">toml_doc_obj</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">toml_doc_obj</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">str_repr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">toml_doc_obj</span><span class="o">.</span><span class="n">as_string</span><span class="p">()</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">item</span><span class="p">,</span> <span class="n">AoT</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">defined_as_key_value</span><span class="p">:</span>
+            <span class="n">str_repr</span> <span class="o">=</span> <span class="n">_get_aot_repr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">item</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">str_repr</span><span class="p">)</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">formatting_options</span><span class="o">.</span><span class="n">line_length</span><span class="p">:</span>
+                <span class="n">str_repr</span> <span class="o">=</span> <span class="n">_get_aot_repr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">item</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">,</span> <span class="n">multiline</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">with</span> <span class="n">contextlib</span><span class="o">.</span><span class="n">suppress</span><span class="p">(</span><span class="ne">AttributeError</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">str_repr</span><span class="o">.</span><span class="n">startswith</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">_indent_level</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="s2">&quot; &quot;</span><span class="p">):</span>
+                <span class="n">str_repr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_indent_level</span> <span class="o">*</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="n">str_repr</span><span class="o">.</span><span class="n">lstrip</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">str_repr</span>
+
+    <span class="k">def</span> <span class="fm">__hash__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">hash</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">toml_doc_obj</span><span class="o">.</span><span class="n">as_string</span><span class="p">())</span></div>
+
+
+
+<div class="viewcode-block" id="TomlFileEntriesContainer">
+<a class="viewcode-back" href="../../toml_formatter.html#toml_formatter.toml_formatter.TomlFileEntriesContainer">[docs]</a>
+<span class="k">class</span> <span class="nc">TomlFileEntriesContainer</span><span class="p">(</span><span class="n">BaseTomlContentsSequence</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Container for parsed TOML file entries.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialise instance with `data` formatted as in a file&#39;s `readlines` method.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>
+
+    <span class="nd">@BaseTomlContentsSequence</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Parse passed data and store validated TOML atomic entries.&quot;&quot;&quot;</span>
+        <span class="n">atomic_entries</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">previous_lines_failed_to_parse</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">new</span><span class="p">:</span>
+            <span class="n">str_to_parse</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="o">*</span><span class="n">previous_lines_failed_to_parse</span><span class="p">,</span> <span class="n">line</span><span class="p">])</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">new_entry</span> <span class="o">=</span> <span class="n">ParsedTomlFileEntry</span><span class="p">(</span><span class="n">str_to_parse</span><span class="p">)</span>
+            <span class="k">except</span> <span class="p">(</span><span class="n">UnexpectedEofError</span><span class="p">,</span> <span class="n">UnexpectedCharError</span><span class="p">):</span>
+                <span class="n">previous_lines_failed_to_parse</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">atomic_entries</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_entry</span><span class="p">)</span>
+                <span class="n">previous_lines_failed_to_parse</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_data</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">atomic_entries</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="FormattedTomlFileSection">
+<a class="viewcode-back" href="../../toml_formatter.html#toml_formatter.toml_formatter.FormattedTomlFileSection">[docs]</a>
+<span class="k">class</span> <span class="nc">FormattedTomlFileSection</span><span class="p">(</span><span class="n">BaseTomlContentsSequence</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Class that holds and formats data for a single section of a TOML file.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">formatting_options</span><span class="p">:</span> <span class="n">ParsedConfig</span> <span class="o">=</span> <span class="n">DEFAULT_CONFIG</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialise instance.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">formatting_options</span> <span class="o">=</span> <span class="n">formatting_options</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>
+
+    <span class="nd">@BaseTomlContentsSequence</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">ParsedTomlFileEntry</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">ParsedTomlFileEntry</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Set the data for the instance, applying formatting routines.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">new</span><span class="p">:</span>
+            <span class="n">new</span> <span class="o">=</span> <span class="n">_remove_consecutive_blanks</span><span class="p">(</span><span class="n">new</span><span class="p">)</span>
+            <span class="n">new</span> <span class="o">=</span> <span class="n">_adjust_empty_lines</span><span class="p">(</span><span class="n">new</span><span class="p">)</span>
+            <span class="n">new</span> <span class="o">=</span> <span class="n">_sort_keys</span><span class="p">(</span><span class="n">new</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_data</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">new</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_comment</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_normalise_indentation</span><span class="p">()</span>
+
+    <span class="nd">@cached_property</span>
+    <span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the name of the table.&quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">entry</span><span class="o">.</span><span class="n">item</span><span class="p">,</span> <span class="p">(</span><span class="n">Table</span><span class="p">,</span> <span class="n">AoT</span><span class="p">)):</span>
+                <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">&quot;[]&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="s2">&quot;&quot;</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">is_comment</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return True if the table only contains comments, and False otherwise.&quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">entry</span><span class="o">.</span><span class="n">item</span><span class="p">,</span> <span class="p">(</span><span class="n">Comment</span><span class="p">,</span> <span class="n">Whitespace</span><span class="p">)):</span>
+                <span class="k">continue</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">return</span> <span class="kc">True</span>
+
+    <span class="k">def</span> <span class="nf">_normalise_indentation</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">level_number</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
+            <span class="n">indent_int</span> <span class="o">=</span> <span class="n">level_number</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">formatting_options</span><span class="o">.</span><span class="n">indentation</span>
+            <span class="n">entry</span><span class="o">.</span><span class="n">indent</span><span class="p">(</span><span class="n">indent_int</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">entry</span><span class="o">.</span><span class="n">item</span><span class="p">,</span> <span class="p">(</span><span class="n">Table</span><span class="p">,</span> <span class="n">AoT</span><span class="p">))</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">entry</span><span class="o">.</span><span class="n">defined_as_key_value</span><span class="p">:</span>
+                <span class="n">level_number</span> <span class="o">+=</span> <span class="mi">1</span></div>
+
+
+
+<div class="viewcode-block" id="FormattedToml">
+<a class="viewcode-back" href="../../toml_formatter.html#toml_formatter.toml_formatter.FormattedToml">[docs]</a>
+<span class="k">class</span> <span class="nc">FormattedToml</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Class to help format the contents of a TOML file.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">raw_data</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">formatting_options</span><span class="p">:</span> <span class="n">ParsedConfig</span> <span class="o">=</span> <span class="n">DEFAULT_CONFIG</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialise, with `raw_data` being like the output of a file&#39;s `readlines`.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">formatting_options</span> <span class="o">=</span> <span class="n">formatting_options</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sections</span> <span class="o">=</span> <span class="n">_split_data_in_sections</span><span class="p">(</span>
+            <span class="n">TomlFileEntriesContainer</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">raw_data</span><span class="p">),</span>
+            <span class="n">formatting_options</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">formatting_options</span><span class="p">,</span>
+        <span class="p">)</span>
+
+<div class="viewcode-block" id="FormattedToml.from_file">
+<a class="viewcode-back" href="../../toml_formatter.html#toml_formatter.toml_formatter.FormattedToml.from_file">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_file</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Path</span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return a class instance with info read from file located at `path`.&quot;&quot;&quot;</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">raw_data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">raw_data</span><span class="o">=</span><span class="n">raw_data</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="FormattedToml.from_string">
+<a class="viewcode-back" href="../../toml_formatter.html#toml_formatter.toml_formatter.FormattedToml.from_string">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_string</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">toml_string</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return a class instance with info retrieved from `toml_string`.&quot;&quot;&quot;</span>
+        <span class="n">raw_data</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">line</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">toml_string</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)]</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">raw_data</span><span class="o">=</span><span class="n">raw_data</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">sections</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">FormattedTomlFileSection</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the sections present in the file.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;_sections&quot;</span><span class="p">,</span> <span class="p">())</span>
+
+    <span class="nd">@sections</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">sections</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">FormattedTomlFileSection</span><span class="p">]):</span>
+        <span class="k">for</span> <span class="n">section</span> <span class="ow">in</span> <span class="n">new</span><span class="p">:</span>
+            <span class="n">section</span><span class="o">.</span><span class="n">formatting_options</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">formatting_options</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_sections</span> <span class="o">=</span> <span class="n">_get_sorted_sequence_of_sections</span><span class="p">(</span>
+            <span class="n">new</span><span class="p">,</span> <span class="n">override_sorting</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">formatting_options</span><span class="o">.</span><span class="n">section_order_overrides</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">tomli</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">indentation</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the indentation applied for each scope level change.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">formatting_options</span><span class="o">.</span><span class="n">indentation</span>
+
+    <span class="nd">@indentation</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">indentation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Set the indentation and update the sections accordingly.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">formatting_options</span><span class="o">.</span><span class="n">indentation</span> <span class="o">=</span> <span class="n">new</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sections</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sections</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">section</span><span class="p">)</span> <span class="k">for</span> <span class="n">section</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">sections</span><span class="p">)</span></div>
+
+
+
+<span class="k">def</span> <span class="nf">_indent_atomic_toml_entry</span><span class="p">(</span><span class="n">entry</span><span class="p">:</span> <span class="n">ParsedTomlFileEntry</span><span class="p">,</span> <span class="n">indent</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">entry</span><span class="o">.</span><span class="n">item</span><span class="p">,</span> <span class="n">Whitespace</span><span class="p">):</span>
+        <span class="k">return</span>
+    <span class="n">indent_str</span> <span class="o">=</span> <span class="n">indent</span> <span class="o">*</span> <span class="s2">&quot; &quot;</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">entry</span><span class="o">.</span><span class="n">item</span><span class="p">,</span> <span class="p">(</span><span class="n">Table</span><span class="p">,</span> <span class="n">AoT</span><span class="p">))</span> <span class="ow">and</span> <span class="n">entry</span><span class="o">.</span><span class="n">defined_as_key_value</span><span class="p">:</span>
+        <span class="c1"># For whatever reason, tomlkit treats this as a special case</span>
+        <span class="n">entry</span><span class="o">.</span><span class="n">key</span><span class="o">.</span><span class="n">_original</span> <span class="o">=</span> <span class="n">indent_str</span> <span class="o">+</span> <span class="n">entry</span><span class="o">.</span><span class="n">key</span><span class="o">.</span><span class="n">_original</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>  <span class="c1"># noqa: SLF001</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">entry</span><span class="o">.</span><span class="n">item</span><span class="o">.</span><span class="n">indent</span><span class="p">(</span><span class="n">indent</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">entry</span><span class="o">.</span><span class="n">item</span><span class="p">,</span> <span class="n">tomlkit</span><span class="o">.</span><span class="n">items</span><span class="o">.</span><span class="n">Array</span><span class="p">):</span>
+        <span class="c1"># Convert to multiline all inline arrays whose str len is &gt; 90 characters</span>
+        <span class="n">is_multiline</span> <span class="o">=</span> <span class="nb">any</span><span class="p">(</span>
+            <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">Whitespace</span><span class="p">)</span> <span class="ow">and</span> <span class="n">value</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">itertools</span><span class="o">.</span><span class="n">chain</span><span class="o">.</span><span class="n">from_iterable</span><span class="p">(</span><span class="n">entry</span><span class="o">.</span><span class="n">item</span><span class="o">.</span><span class="n">_value</span><span class="p">)</span>  <span class="c1"># noqa: SLF001</span>
+        <span class="p">)</span>
+        <span class="n">should_be_multiline</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">is_multiline</span><span class="p">:</span>
+            <span class="n">str_repr</span> <span class="o">=</span> <span class="n">indent_str</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">str_repr</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">):</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">rstrip</span><span class="p">())</span> <span class="o">&gt;</span> <span class="n">entry</span><span class="o">.</span><span class="n">formatting_options</span><span class="o">.</span><span class="n">line_length</span><span class="p">:</span>
+                    <span class="n">should_be_multiline</span> <span class="o">=</span> <span class="kc">True</span>
+                    <span class="k">break</span>
+
+        <span class="c1"># There is a bug in v0.12.1 of tomlkit that will cause a &quot;has no attribute</span>
+        <span class="c1"># is_bolean&quot; to be raised if we use the item&#39;s own getitem here.</span>
+        <span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="nb">list</span><span class="o">.</span><span class="fm">__getitem__</span><span class="p">(</span><span class="n">entry</span><span class="o">.</span><span class="n">item</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">entry</span><span class="o">.</span><span class="n">item</span><span class="p">))]</span>
+        <span class="n">entry</span><span class="o">.</span><span class="n">item</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">is_multiline</span> <span class="ow">or</span> <span class="n">should_be_multiline</span><span class="p">:</span>
+            <span class="c1"># It seems that tomlkit doesn&#39;t keep comments in multi-line arrays.</span>
+            <span class="c1"># we&#39;ll just reset the array to get the correct indentation. The</span>
+            <span class="c1"># comments are kept for inline arrays though -- even after data reset.</span>
+            <span class="c1"># TODO: Keep an eye in tomlkit updates to see if there is a</span>
+            <span class="c1">#       better alternative to this.</span>
+            <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">values</span><span class="p">:</span>
+                <span class="n">entry</span><span class="o">.</span><span class="n">item</span><span class="o">.</span><span class="n">add_line</span><span class="p">(</span><span class="n">value</span><span class="o">.</span><span class="n">unwrap</span><span class="p">())</span>
+            <span class="n">entry</span><span class="o">.</span><span class="n">item</span><span class="o">.</span><span class="n">add_line</span><span class="p">(</span><span class="n">indent</span><span class="o">=</span><span class="n">indent_str</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">ivalue</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">values</span><span class="p">):</span>
+                <span class="n">entry</span><span class="o">.</span><span class="n">item</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">ivalue</span><span class="p">,</span> <span class="n">value</span><span class="o">.</span><span class="n">unwrap</span><span class="p">())</span>
+
+
+<span class="k">def</span> <span class="nf">_adjust_empty_lines</span><span class="p">(</span>
+    <span class="n">section</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">ParsedTomlFileEntry</span><span class="p">],</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">ParsedTomlFileEntry</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Add/rm empty lines so sections start with a non-empty and end with 1 empty line.&quot;&quot;&quot;</span>
+    <span class="n">toml_newline</span> <span class="o">=</span> <span class="n">ParsedTomlFileEntry</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">first_non_blank</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span>
+            <span class="n">ix</span> <span class="k">for</span> <span class="n">ix</span><span class="p">,</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">section</span><span class="p">)</span> <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">item</span><span class="p">,</span> <span class="n">Whitespace</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">last_non_blank</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span>
+            <span class="n">ix</span>
+            <span class="k">for</span> <span class="n">ix</span><span class="p">,</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">(</span><span class="n">section</span><span class="p">)))</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">item</span><span class="p">,</span> <span class="n">Whitespace</span><span class="p">)</span>
+        <span class="p">)</span>
+    <span class="k">except</span> <span class="ne">StopIteration</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">toml_newline</span><span class="p">,)</span>
+
+    <span class="k">return</span> <span class="p">(</span><span class="o">*</span><span class="nb">tuple</span><span class="p">(</span><span class="n">section</span><span class="p">[</span><span class="n">first_non_blank</span> <span class="p">:</span> <span class="n">last_non_blank</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]),</span> <span class="n">toml_newline</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">_remove_consecutive_blanks</span><span class="p">(</span>
+    <span class="n">entries</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">ParsedTomlFileEntry</span><span class="p">],</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">ParsedTomlFileEntry</span><span class="p">]:</span>
+    <span class="n">new_entries</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">ientry</span><span class="p">,</span> <span class="n">entry</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">entries</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">entry</span><span class="o">.</span><span class="n">item</span><span class="p">,</span> <span class="n">Whitespace</span><span class="p">):</span>
+            <span class="n">i_next</span> <span class="o">=</span> <span class="n">ientry</span> <span class="o">+</span> <span class="mi">1</span>
+            <span class="k">if</span> <span class="n">i_next</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">entries</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">entries</span><span class="p">[</span><span class="n">i_next</span><span class="p">]</span><span class="o">.</span><span class="n">item</span><span class="p">,</span> <span class="n">Whitespace</span><span class="p">):</span>
+                <span class="k">continue</span>
+        <span class="n">new_entries</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">new_entries</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">_sort_keys</span><span class="p">(</span>
+    <span class="n">section_entries</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">ParsedTomlFileEntry</span><span class="p">],</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">ParsedTomlFileEntry</span><span class="p">]:</span>
+    <span class="n">section_entries</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">section_entries</span><span class="p">)</span>
+    <span class="n">sorted_section_entries</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">current_sorting_block</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">ientry</span><span class="p">,</span> <span class="n">entry</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">section_entries</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">entry</span><span class="o">.</span><span class="n">item</span><span class="p">,</span> <span class="p">(</span><span class="n">Table</span><span class="p">,</span> <span class="n">AoT</span><span class="p">))</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">entry</span><span class="o">.</span><span class="n">defined_as_key_value</span><span class="p">:</span>
+            <span class="n">sorted_section_entries</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="p">(</span>
+            <span class="nb">isinstance</span><span class="p">(</span><span class="n">entry</span><span class="o">.</span><span class="n">item</span><span class="p">,</span> <span class="p">(</span><span class="n">Comment</span><span class="p">,</span> <span class="n">Whitespace</span><span class="p">))</span>
+            <span class="ow">or</span> <span class="n">ientry</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">section_entries</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="p">):</span>
+            <span class="c1"># Found blanks/spaces separating blocks, or the section ended. Let&#39;s flush.</span>
+            <span class="n">sorted_section_entries</span> <span class="o">+=</span> <span class="nb">sorted</span><span class="p">(</span>
+                <span class="n">current_sorting_block</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">entry</span><span class="p">:</span> <span class="n">entry</span><span class="o">.</span><span class="n">key</span><span class="o">.</span><span class="n">key</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+            <span class="p">)</span>
+            <span class="n">sorted_section_entries</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span>
+            <span class="n">current_sorting_block</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">current_sorting_block</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">sorted_section_entries</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">_split_data_in_sections</span><span class="p">(</span>
+    <span class="n">entries</span><span class="p">:</span> <span class="n">TomlFileEntriesContainer</span><span class="p">,</span> <span class="n">formatting_options</span><span class="p">:</span> <span class="n">ParsedConfig</span> <span class="o">=</span> <span class="n">DEFAULT_CONFIG</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">FormattedTomlFileSection</span><span class="p">]:</span>
+    <span class="n">sections</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">new_section</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">new_section_start</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">entries</span><span class="p">:</span>
+        <span class="n">new_section_start</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="nb">isinstance</span><span class="p">(</span><span class="n">entry</span><span class="o">.</span><span class="n">item</span><span class="p">,</span> <span class="p">(</span><span class="n">Table</span><span class="p">,</span> <span class="n">AoT</span><span class="p">))</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">entry</span><span class="o">.</span><span class="n">defined_as_key_value</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">new_section_start</span><span class="p">:</span>
+            <span class="c1"># Find comments that should be attached to next section</span>
+            <span class="n">backwards_enumerate</span> <span class="o">=</span> <span class="nb">reversed</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">(</span><span class="n">new_section</span><span class="p">)))</span>
+            <span class="n">i_last_valid</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span>
+                <span class="p">(</span><span class="n">ix</span> <span class="k">for</span> <span class="n">ix</span><span class="p">,</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">backwards_enumerate</span> <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">item</span><span class="p">,</span> <span class="n">Comment</span><span class="p">)),</span>
+                <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="n">comments_that_belong_to_next_section</span> <span class="o">=</span> <span class="n">new_section</span><span class="p">[</span><span class="n">i_last_valid</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">:]</span>
+            <span class="n">new_section</span> <span class="o">=</span> <span class="n">new_section</span><span class="p">[:</span> <span class="n">i_last_valid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+
+            <span class="k">if</span> <span class="n">new_section</span><span class="p">:</span>
+                <span class="n">sections</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_section</span><span class="p">)</span>
+            <span class="n">new_section</span> <span class="o">=</span> <span class="p">[</span><span class="o">*</span><span class="n">comments_that_belong_to_next_section</span><span class="p">,</span> <span class="n">entry</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">new_section</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">new_section_start</span><span class="p">:</span>
+        <span class="n">sections</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_section</span><span class="p">)</span>
+
+    <span class="n">rtn</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">section</span> <span class="ow">in</span> <span class="n">sections</span><span class="p">:</span>
+        <span class="c1"># Find eventual orphan comments and separate them from section</span>
+        <span class="n">i_last_valid</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span>
+            <span class="p">(</span>
+                <span class="n">ix</span>
+                <span class="k">for</span> <span class="n">ix</span><span class="p">,</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">(</span><span class="n">section</span><span class="p">)))</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">item</span><span class="p">,</span> <span class="p">(</span><span class="n">Comment</span><span class="p">,</span> <span class="n">Whitespace</span><span class="p">))</span>
+            <span class="p">),</span>
+            <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="n">actual_section</span> <span class="o">=</span> <span class="n">section</span><span class="p">[:</span> <span class="n">i_last_valid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="n">dangling_comments</span> <span class="o">=</span> <span class="n">section</span><span class="p">[</span><span class="n">i_last_valid</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">:]</span>
+        <span class="k">for</span> <span class="n">sec</span> <span class="ow">in</span> <span class="p">[</span><span class="n">actual_section</span><span class="p">,</span> <span class="n">dangling_comments</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">entry</span><span class="o">.</span><span class="n">item</span><span class="p">,</span> <span class="n">Whitespace</span><span class="p">)</span> <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">sec</span><span class="p">):</span>
+                <span class="k">continue</span>
+            <span class="n">rtn</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="n">FormattedTomlFileSection</span><span class="p">(</span><span class="n">sec</span><span class="p">,</span> <span class="n">formatting_options</span><span class="o">=</span><span class="n">formatting_options</span><span class="p">)</span>
+            <span class="p">)</span>
+
+    <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">rtn</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">_get_sorted_sequence_of_sections</span><span class="p">(</span>
+    <span class="n">sections</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">FormattedTomlFileSection</span><span class="p">],</span> <span class="n">override_sorting</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">()</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">FormattedTomlFileSection</span><span class="p">]:</span>
+    <span class="n">sorting_blocks</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">current_block</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="c1"># Put the overriden sections at the front manually</span>
+    <span class="n">manual_order_section_names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">manual_order_section_name</span> <span class="ow">in</span> <span class="n">override_sorting</span><span class="p">:</span>
+        <span class="n">regex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">manual_order_section_name</span><span class="p">)</span>
+        <span class="n">section_names_for_match</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">s</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">sections</span> <span class="k">if</span> <span class="n">s</span><span class="o">.</span><span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">manual_order_section_names</span>
+        <span class="p">]</span>
+        <span class="n">matched_section_names</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="n">regex</span><span class="o">.</span><span class="n">match</span><span class="p">,</span> <span class="n">section_names_for_match</span><span class="p">))</span>
+        <span class="n">manual_order_section_names</span> <span class="o">+=</span> <span class="n">matched_section_names</span>
+
+    <span class="n">manual_order_sections</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">section_name</span> <span class="ow">in</span> <span class="n">manual_order_section_names</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">section</span> <span class="ow">in</span> <span class="n">sections</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">section</span><span class="o">.</span><span class="n">is_comment</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="k">if</span> <span class="n">section</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">section_name</span><span class="p">:</span>
+                <span class="n">manual_order_sections</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">section</span><span class="p">)</span>
+                <span class="k">break</span>
+
+    <span class="n">sections_to_enter_sorting</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">sections</span> <span class="k">if</span> <span class="n">s</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">manual_order_sections</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">section</span> <span class="ow">in</span> <span class="n">sections_to_enter_sorting</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">section</span><span class="o">.</span><span class="n">is_comment</span><span class="p">:</span>
+            <span class="c1"># This is a dangling comment section, marking the split between blocks</span>
+            <span class="n">sorting_blocks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">current_block</span><span class="p">)</span>
+            <span class="n">sorting_blocks</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">section</span><span class="p">])</span>
+            <span class="n">current_block</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">current_block</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">section</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">current_block</span><span class="p">:</span>
+        <span class="n">sorting_blocks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">current_block</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">iblock</span><span class="p">,</span> <span class="n">block</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">sorting_blocks</span><span class="p">):</span>
+        <span class="n">sorting_blocks</span><span class="p">[</span><span class="n">iblock</span><span class="p">]</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span>
+            <span class="n">block</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">section</span><span class="p">:</span> <span class="n">section</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+        <span class="p">)</span>
+
+    <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span>
+        <span class="n">manual_order_sections</span> <span class="o">+</span> <span class="p">[</span><span class="n">section</span> <span class="k">for</span> <span class="n">block</span> <span class="ow">in</span> <span class="n">sorting_blocks</span> <span class="k">for</span> <span class="n">section</span> <span class="ow">in</span> <span class="n">block</span><span class="p">]</span>
+    <span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">_get_aot_repr</span><span class="p">(</span><span class="n">aot</span><span class="p">:</span> <span class="n">AoT</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="n">tomlkit</span><span class="o">.</span><span class="n">items</span><span class="o">.</span><span class="n">Key</span><span class="p">,</span> <span class="n">multiline</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return a formatted representation of an AoT.&quot;&quot;&quot;</span>
+    <span class="n">indent</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">aot</span><span class="o">.</span><span class="n">trivia</span><span class="o">.</span><span class="n">indent</span><span class="p">)</span>
+    <span class="n">new_array</span> <span class="o">=</span> <span class="n">tomlkit</span><span class="o">.</span><span class="n">array</span><span class="p">()</span><span class="o">.</span><span class="n">multiline</span><span class="p">(</span><span class="n">multiline</span><span class="p">)</span><span class="o">.</span><span class="n">indent</span><span class="p">(</span><span class="n">indent</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">table</span> <span class="ow">in</span> <span class="n">aot</span><span class="p">:</span>
+        <span class="n">new_table</span> <span class="o">=</span> <span class="n">tomlkit</span><span class="o">.</span><span class="n">inline_table</span><span class="p">()</span>
+        <span class="n">new_table</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">table</span><span class="o">.</span><span class="n">unwrap</span><span class="p">())</span>
+        <span class="n">new_array</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_table</span><span class="p">)</span>
+
+    <span class="n">toml_doc_obj</span> <span class="o">=</span> <span class="n">tomlkit</span><span class="o">.</span><span class="n">toml_document</span><span class="o">.</span><span class="n">TOMLDocument</span><span class="p">()</span>
+    <span class="n">toml_doc_obj</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">key</span><span class="o">.</span><span class="n">as_string</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">(),</span> <span class="n">new_array</span><span class="p">)</span>
+    <span class="n">str_repr</span> <span class="o">=</span> <span class="n">toml_doc_obj</span><span class="o">.</span><span class="n">as_string</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">multiline</span><span class="p">:</span>
+        <span class="c1"># Fix indentation of AoT items</span>
+        <span class="kn">import</span> <span class="nn">io</span>
+
+        <span class="n">buf</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">(</span><span class="n">str_repr</span><span class="p">)</span>
+        <span class="n">lines</span> <span class="o">=</span> <span class="n">buf</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">iline</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="n">lines</span><span class="p">[</span><span class="n">iline</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">aot</span><span class="o">.</span><span class="n">trivia</span><span class="o">.</span><span class="n">indent</span> <span class="o">+</span> <span class="n">lines</span><span class="p">[</span><span class="n">iline</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="n">str_repr</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+
+    <span class="n">str_repr</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">aot</span><span class="o">.</span><span class="n">trivia</span><span class="o">.</span><span class="n">comment_ws</span><span class="si">}{</span><span class="n">aot</span><span class="o">.</span><span class="n">trivia</span><span class="o">.</span><span class="n">comment</span><span class="si">}</span><span class="s2">&quot;</span>
+
+    <span class="k">return</span> <span class="n">str_repr</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Paulo V C Medeiros.
+      <span class="lastupdated">Last updated on 2023-10-26T07:16:12Z.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

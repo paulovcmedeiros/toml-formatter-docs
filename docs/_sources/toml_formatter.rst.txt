@@ -1,0 +1,50 @@
+toml\_formatter package
+=======================
+
+.. automodule:: toml_formatter
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Submodules
+----------
+
+toml\_formatter.argparse\_wrapper module
+----------------------------------------
+
+.. automodule:: toml_formatter.argparse_wrapper
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+toml\_formatter.commands\_functions module
+------------------------------------------
+
+.. automodule:: toml_formatter.commands_functions
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+toml\_formatter.config\_parser module
+-------------------------------------
+
+.. automodule:: toml_formatter.config_parser
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+toml\_formatter.logs module
+---------------------------
+
+.. automodule:: toml_formatter.logs
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+toml\_formatter.toml\_formatter module
+--------------------------------------
+
+.. automodule:: toml_formatter.toml_formatter
+   :members:
+   :undoc-members:
+   :show-inheritance:
