@@ -151,7 +151,8 @@
              
   <p><a class="reference external" href="https://github.com/paulovcmedeiros/toml-formatter"><img alt="GitHub" src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&amp;logo=github&amp;logoColor=white" /></a>
 <a class="reference external" href="https://paulovcmedeiros.github.io/toml-formatter-docs/"><img alt="Github Pages" src="https://img.shields.io/badge/github%20pages-121013?style=for-the-badge&amp;logo=github&amp;logoColor=white" /></a></p>
-<p><img alt="Linting" src="https://github.com/paulovcmedeiros/toml-formatter/actions/workflows/linting.yaml/badge.svg" />
+<p><a class="reference external" href="https://shields.io/"><img alt="Contributors Welcome" src="https://img.shields.io/badge/Contributors-welcome-%3CCOLOR%3E.svg" /></a>
+<img alt="Linting" src="https://github.com/paulovcmedeiros/toml-formatter/actions/workflows/linting.yaml/badge.svg" />
 <img alt="Tests" src="https://github.com/paulovcmedeiros/toml-formatter/actions/workflows/tests.yaml/badge.svg" />
 <a class="reference external" href="https://codecov.io/gh/paulovcmedeiros/toml-formatter"><img alt="codecov" src="https://codecov.io/gh/paulovcmedeiros/toml-formatter/graph/badge.svg?token=XI8G1WH9O6" /></a></p>
 <section id="toml-formatter">
@@ -160,7 +161,7 @@
 <p>See also the <a class="reference external" href="https://paulovcmedeiros.github.io/toml-formatter-docs">online documentation</a>.</p>
 <section id="configuration">
 <h2>Configuration<a class="headerlink" href="#configuration" title="Link to this heading"></a></h2>
-<p>To modify the default options for the package, add a <code class="docutils literal notranslate"><span class="pre">[tool.toml-formatter]</span></code> section in your project’s <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file. Please take a look at the <a class="reference external" href="https://paulovcmedeiros.github.io/toml-formatter-docs/toml_formatter.html#toml_formatter.formatter_options.FormatterOptions">online documentation</a> for more information about the supported configuration options.</p>
+<p>To modify the default options for the package, add a <code class="docutils literal notranslate"><span class="pre">[tool.toml-formatter]</span></code> section in your project’s <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file. Alternatively, you can pass the <code class="docutils literal notranslate"><span class="pre">--config-file-path</span></code> option to select a different config file.  Please take a look at the <a class="reference external" href="https://paulovcmedeiros.github.io/toml-formatter-docs/toml_formatter.html#toml_formatter.formatter_options.FormatterOptions">online documentation</a> for more information about the supported configuration options.</p>
 <p>To see the configs in use, please run</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>toml-formatter<span class="w"> </span>configs
 </pre></div>
@@ -170,6 +171,17 @@
 <h2>Basic Usage<a class="headerlink" href="#basic-usage" title="Link to this heading"></a></h2>
 <section id="cli-usage">
 <h3>CLI Usage<a class="headerlink" href="#cli-usage" title="Link to this heading"></a></h3>
+<p>Upon succesfull installation, you should be able to run</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>toml-formatter<span class="w"> </span><span class="o">[</span>opts<span class="o">]</span><span class="w"> </span>SUBCOMMAND<span class="w"> </span><span class="o">[</span>subcommand_opts<span class="o">]</span>
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">[opts]</span></code> and <code class="docutils literal notranslate"><span class="pre">[subcommand_opts]</span></code> denote optional command line arguments
+that apply, respectively, to <code class="docutils literal notranslate"><span class="pre">toml-formatter</span></code> in general and to <code class="docutils literal notranslate"><span class="pre">SUBCOMMAND</span></code>
+specifically.</p>
+<p><strong>Please run <code class="docutils literal notranslate"><span class="pre">toml-formatter</span> <span class="pre">-h</span></code> for information</strong> about the supported subcommands
+and general <code class="docutils literal notranslate"><span class="pre">toml-formatter</span></code> options. For info about specific subcommands and the
+options that apply to them only, <strong>please run <code class="docutils literal notranslate"><span class="pre">toml-formatter</span> <span class="pre">SUBCOMMAND</span> <span class="pre">-h</span></code></strong> (note
+that the <code class="docutils literal notranslate"><span class="pre">-h</span></code> goes after the subcommand in this case).</p>
 <section id="check-if-file-s-are-formatted">
 <h4>Check if file(s) are formatted<a class="headerlink" href="#check-if-file-s-are-formatted" title="Link to this heading"></a></h4>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>toml-formatter<span class="w"> </span>check<span class="w"> </span>path/to/toml/files/or/directory/containing/them
@@ -205,7 +217,7 @@
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Paulo V C Medeiros.
-      <span class="lastupdated">Last updated on 2023-10-26T10:49:41Z.
+      <span class="lastupdated">Last updated on 2023-10-26T11:20:21Z.
       </span></p>
   </div>
 
