@@ -223,7 +223,7 @@
     <span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialise instance.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">toml_doc_obj</span> <span class="o">=</span> <span class="n">tomlkit</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">single_entry_string</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">formatting_options</span> <span class="o">=</span> <span class="n">formatting_options</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">formatting_options</span> <span class="o">=</span> <span class="n">ParsedConfig</span><span class="o">.</span><span class="n">model_validate</span><span class="p">(</span><span class="n">formatting_options</span><span class="p">)</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">toml_doc_obj</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -366,7 +366,7 @@
         <span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">formatting_options</span><span class="p">:</span> <span class="n">ParsedConfig</span> <span class="o">=</span> <span class="n">DEFAULT_CONFIG</span>
     <span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialise instance.&quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">formatting_options</span> <span class="o">=</span> <span class="n">formatting_options</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">formatting_options</span> <span class="o">=</span> <span class="n">ParsedConfig</span><span class="o">.</span><span class="n">model_validate</span><span class="p">(</span><span class="n">formatting_options</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>
 
     <span class="nd">@BaseTomlContentsSequence</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">setter</span>
@@ -416,7 +416,7 @@
         <span class="bp">self</span><span class="p">,</span> <span class="n">raw_data</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">formatting_options</span><span class="p">:</span> <span class="n">ParsedConfig</span> <span class="o">=</span> <span class="n">DEFAULT_CONFIG</span>
     <span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialise, with `raw_data` being like the output of a file&#39;s `readlines`.&quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">formatting_options</span> <span class="o">=</span> <span class="n">formatting_options</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">formatting_options</span> <span class="o">=</span> <span class="n">ParsedConfig</span><span class="o">.</span><span class="n">model_validate</span><span class="p">(</span><span class="n">formatting_options</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">sections</span> <span class="o">=</span> <span class="n">_split_data_in_sections</span><span class="p">(</span>
             <span class="n">TomlFileEntriesContainer</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">raw_data</span><span class="p">),</span>
             <span class="n">formatting_options</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">formatting_options</span><span class="p">,</span>
@@ -706,7 +706,7 @@
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Paulo V C Medeiros.
-      <span class="lastupdated">Last updated on 2023-10-26T07:41:23Z.
+      <span class="lastupdated">Last updated on 2023-10-26T08:27:07Z.
       </span></p>
   </div>
 
