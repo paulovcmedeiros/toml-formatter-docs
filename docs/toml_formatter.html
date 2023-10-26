@@ -7,6 +7,7 @@
   <title>toml_formatter package &mdash; TOML Formatter  documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/autodoc_pydantic.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
@@ -44,7 +45,19 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="readme_link.html">README</a></li>
+<li class="toctree-l1"><a class="reference internal" href="readme_link.html">README</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="readme_link.html#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="readme_link.html#basic-usage">Basic Usage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="readme_link.html#cli-usage">CLI Usage</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="readme_link.html#check-if-file-s-are-formatted">Check if file(s) are formatted</a></li>
+<li class="toctree-l4"><a class="reference internal" href="readme_link.html#fix-the-formatting">Fix the formatting</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="readme_link.html#use-as-module">Use as Module</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">API Documentation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#toml_formatter.GeneralConstants"><code class="docutils literal notranslate"><span class="pre">GeneralConstants</span></code></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#toml_formatter.GeneralConstants.PACKAGE_DIRECTORY"><code class="docutils literal notranslate"><span class="pre">GeneralConstants.PACKAGE_DIRECTORY</span></code></a></li>
@@ -63,14 +76,12 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#module-toml_formatter.config_parser">toml_formatter.config_parser module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#toml_formatter.config_parser.ParsedConfig"><code class="docutils literal notranslate"><span class="pre">ParsedConfig</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#toml_formatter.config_parser.ParsedConfig.from_toml_file"><code class="docutils literal notranslate"><span class="pre">ParsedConfig.from_toml_file()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#toml_formatter.config_parser.ParsedConfig.indentation"><code class="docutils literal notranslate"><span class="pre">ParsedConfig.indentation</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#toml_formatter.config_parser.ParsedConfig.line_length"><code class="docutils literal notranslate"><span class="pre">ParsedConfig.line_length</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#toml_formatter.config_parser.ParsedConfig.loglevel"><code class="docutils literal notranslate"><span class="pre">ParsedConfig.loglevel</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#toml_formatter.config_parser.ParsedConfig.model_config"><code class="docutils literal notranslate"><span class="pre">ParsedConfig.model_config</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#toml_formatter.config_parser.ParsedConfig.model_fields"><code class="docutils literal notranslate"><span class="pre">ParsedConfig.model_fields</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#toml_formatter.config_parser.ParsedConfig.section_order_overrides"><code class="docutils literal notranslate"><span class="pre">ParsedConfig.section_order_overrides</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#toml_formatter.config_parser.FormatterOptions"><code class="docutils literal notranslate"><span class="pre">FormatterOptions</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#toml_formatter.config_parser.FormatterOptions.indentation"><code class="docutils literal notranslate"><span class="pre">FormatterOptions.indentation</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#toml_formatter.config_parser.FormatterOptions.line_length"><code class="docutils literal notranslate"><span class="pre">FormatterOptions.line_length</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#toml_formatter.config_parser.FormatterOptions.loglevel"><code class="docutils literal notranslate"><span class="pre">FormatterOptions.loglevel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#toml_formatter.config_parser.FormatterOptions.section_order_overrides"><code class="docutils literal notranslate"><span class="pre">FormatterOptions.section_order_overrides</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#toml_formatter.config_parser.FormatterOptions.from_toml_file"><code class="docutils literal notranslate"><span class="pre">FormatterOptions.from_toml_file()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -100,34 +111,12 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#module-toml_formatter.toml_formatter">toml_formatter.toml_formatter module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#toml_formatter.toml_formatter.BaseTomlContentsSequence"><code class="docutils literal notranslate"><span class="pre">BaseTomlContentsSequence</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#toml_formatter.toml_formatter.BaseTomlContentsSequence.data"><code class="docutils literal notranslate"><span class="pre">BaseTomlContentsSequence.data</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#toml_formatter.toml_formatter.BaseTomlContentsSequence.indentation"><code class="docutils literal notranslate"><span class="pre">BaseTomlContentsSequence.indentation</span></code></a></li>
-</ul>
-</li>
 <li class="toctree-l3"><a class="reference internal" href="#toml_formatter.toml_formatter.FormattedToml"><code class="docutils literal notranslate"><span class="pre">FormattedToml</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#toml_formatter.toml_formatter.FormattedToml.dumps"><code class="docutils literal notranslate"><span class="pre">FormattedToml.dumps()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#toml_formatter.toml_formatter.FormattedToml.from_file"><code class="docutils literal notranslate"><span class="pre">FormattedToml.from_file()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#toml_formatter.toml_formatter.FormattedToml.from_string"><code class="docutils literal notranslate"><span class="pre">FormattedToml.from_string()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#toml_formatter.toml_formatter.FormattedToml.indentation"><code class="docutils literal notranslate"><span class="pre">FormattedToml.indentation</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#toml_formatter.toml_formatter.FormattedToml.sections"><code class="docutils literal notranslate"><span class="pre">FormattedToml.sections</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#toml_formatter.toml_formatter.FormattedTomlFileSection"><code class="docutils literal notranslate"><span class="pre">FormattedTomlFileSection</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#toml_formatter.toml_formatter.FormattedTomlFileSection.data"><code class="docutils literal notranslate"><span class="pre">FormattedTomlFileSection.data</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#toml_formatter.toml_formatter.FormattedTomlFileSection.is_comment"><code class="docutils literal notranslate"><span class="pre">FormattedTomlFileSection.is_comment</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#toml_formatter.toml_formatter.FormattedTomlFileSection.name"><code class="docutils literal notranslate"><span class="pre">FormattedTomlFileSection.name</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#toml_formatter.toml_formatter.ParsedTomlFileEntry"><code class="docutils literal notranslate"><span class="pre">ParsedTomlFileEntry</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#toml_formatter.toml_formatter.ParsedTomlFileEntry.defined_as_key_value"><code class="docutils literal notranslate"><span class="pre">ParsedTomlFileEntry.defined_as_key_value</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#toml_formatter.toml_formatter.ParsedTomlFileEntry.indent"><code class="docutils literal notranslate"><span class="pre">ParsedTomlFileEntry.indent()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#toml_formatter.toml_formatter.ParsedTomlFileEntry.item"><code class="docutils literal notranslate"><span class="pre">ParsedTomlFileEntry.item</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#toml_formatter.toml_formatter.ParsedTomlFileEntry.key"><code class="docutils literal notranslate"><span class="pre">ParsedTomlFileEntry.key</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#toml_formatter.toml_formatter.ParsedTomlFileEntry.toml_doc_obj"><code class="docutils literal notranslate"><span class="pre">ParsedTomlFileEntry.toml_doc_obj</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#toml_formatter.toml_formatter.TomlFileEntriesContainer"><code class="docutils literal notranslate"><span class="pre">TomlFileEntriesContainer</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#toml_formatter.toml_formatter.TomlFileEntriesContainer.data"><code class="docutils literal notranslate"><span class="pre">TomlFileEntriesContainer.data</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -228,7 +217,7 @@
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>args</strong> (<em>argparse.Namespace</em>) – Parsed command line arguments.</p></li>
-<li><p><strong>config</strong> (<em>.config_parser.ParsedConfig</em>) – Parsed config file contents.</p></li>
+<li><p><strong>config</strong> (<em>.config_parser.FormatterOptions</em>) – Parsed config file contents.</p></li>
 </ul>
 </dd>
 </dl>
@@ -238,50 +227,102 @@
 <section id="module-toml_formatter.config_parser">
 <span id="toml-formatter-config-parser-module"></span><h2>toml_formatter.config_parser module<a class="headerlink" href="#module-toml_formatter.config_parser" title="Link to this heading"></a></h2>
 <p>Registration and validation of options passed in the config file.</p>
-<dl class="py class">
-<dt class="sig sig-object py" id="toml_formatter.config_parser.ParsedConfig">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ParsedConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line_length</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">90</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indentation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">section_order_overrides</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loglevel</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'INFO'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'DEBUG'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'WARNING'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'ERROR'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'CRITICAL'</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'INFO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toml_formatter/config_parser.html#ParsedConfig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toml_formatter.config_parser.ParsedConfig" title="Link to this definition"></a></dt>
+<dl class="py class pydantic_model">
+<dt class="sig sig-object py" id="toml_formatter.config_parser.FormatterOptions">
+<em class="property"><span class="pre">pydantic</span> <span class="pre">model</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">FormatterOptions</span></span><a class="reference internal" href="_modules/toml_formatter/config_parser.html#FormatterOptions"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toml_formatter.config_parser.FormatterOptions" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseModel</span></code></p>
-<p>Model for the package’s config file.</p>
+<p>Model for the formatter’s configuration options.</p>
+<p><details  class="autodoc_pydantic_collapsable_json">
+<summary>Show JSON schema</summary><div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">   </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;FormatterOptions&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Model for the formatter&#39;s configuration options.&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;line_length&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">90</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;exclusiveMinimum&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Line Length&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;integer&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;indentation&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;minimum&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Indentation&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;integer&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;section_order_overrides&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">         </span><span class="nt">&quot;items&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">         </span><span class="p">},</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Section Order Overrides&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;array&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;loglevel&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;INFO&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;enum&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="s2">&quot;INFO&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;DEBUG&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;WARNING&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;ERROR&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;CRITICAL&quot;</span>
+<span class="w">         </span><span class="p">],</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Loglevel&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">   </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</details></p><dl class="field-list simple">
+<dt class="field-odd">Fields<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference internal" href="#toml_formatter.config_parser.FormatterOptions.indentation" title="toml_formatter.config_parser.FormatterOptions.indentation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">indentation</span> <span class="pre">(int)</span></code></a></p></li>
+<li><p><a class="reference internal" href="#toml_formatter.config_parser.FormatterOptions.line_length" title="toml_formatter.config_parser.FormatterOptions.line_length"><code class="xref py py-obj docutils literal notranslate"><span class="pre">line_length</span> <span class="pre">(int)</span></code></a></p></li>
+<li><p><a class="reference internal" href="#toml_formatter.config_parser.FormatterOptions.loglevel" title="toml_formatter.config_parser.FormatterOptions.loglevel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">loglevel</span> <span class="pre">(Literal['INFO',</span> <span class="pre">'DEBUG',</span> <span class="pre">'WARNING',</span> <span class="pre">'ERROR',</span> <span class="pre">'CRITICAL'])</span></code></a></p></li>
+<li><p><a class="reference internal" href="#toml_formatter.config_parser.FormatterOptions.section_order_overrides" title="toml_formatter.config_parser.FormatterOptions.section_order_overrides"><code class="xref py py-obj docutils literal notranslate"><span class="pre">section_order_overrides</span> <span class="pre">(tuple[str,</span> <span class="pre">...])</span></code></a></p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="toml_formatter.config_parser.FormatterOptions.indentation">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">indentation</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#toml_formatter.config_parser.FormatterOptions.indentation" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Constraints<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ge</strong> = 0</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="toml_formatter.config_parser.FormatterOptions.line_length">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">line_length</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">90</span></em><a class="headerlink" href="#toml_formatter.config_parser.FormatterOptions.line_length" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Constraints<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>gt</strong> = 0</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="toml_formatter.config_parser.FormatterOptions.loglevel">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">loglevel</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'INFO'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'DEBUG'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'WARNING'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'ERROR'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'CRITICAL'</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'INFO'</span></em><a class="headerlink" href="#toml_formatter.config_parser.FormatterOptions.loglevel" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="toml_formatter.config_parser.FormatterOptions.section_order_overrides">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">section_order_overrides</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">()</span></em><a class="headerlink" href="#toml_formatter.config_parser.FormatterOptions.section_order_overrides" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
-<dt class="sig sig-object py" id="toml_formatter.config_parser.ParsedConfig.from_toml_file">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_toml_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toml_formatter/config_parser.html#ParsedConfig.from_toml_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toml_formatter.config_parser.ParsedConfig.from_toml_file" title="Link to this definition"></a></dt>
-<dd><p>Parse a config file and return a <cite>ParsedConfig</cite> instance.</p>
+<dt class="sig sig-object py" id="toml_formatter.config_parser.FormatterOptions.from_toml_file">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_toml_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toml_formatter/config_parser.html#FormatterOptions.from_toml_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toml_formatter.config_parser.FormatterOptions.from_toml_file" title="Link to this definition"></a></dt>
+<dd><p>Parse a config file and return an instance of the class.</p>
 </dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="toml_formatter.config_parser.ParsedConfig.indentation">
-<span class="sig-name descname"><span class="pre">indentation</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#toml_formatter.config_parser.ParsedConfig.indentation" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="toml_formatter.config_parser.ParsedConfig.line_length">
-<span class="sig-name descname"><span class="pre">line_length</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#toml_formatter.config_parser.ParsedConfig.line_length" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="toml_formatter.config_parser.ParsedConfig.loglevel">
-<span class="sig-name descname"><span class="pre">loglevel</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'INFO'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'DEBUG'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'WARNING'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'ERROR'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'CRITICAL'</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#toml_formatter.config_parser.ParsedConfig.loglevel" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="toml_formatter.config_parser.ParsedConfig.model_config">
-<span class="sig-name descname"><span class="pre">model_config</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">ConfigDict</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#toml_formatter.config_parser.ParsedConfig.model_config" title="Link to this definition"></a></dt>
-<dd><p>Configuration for the model, should be a dictionary conforming to [<cite>ConfigDict</cite>][pydantic.config.ConfigDict].</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="toml_formatter.config_parser.ParsedConfig.model_fields">
-<span class="sig-name descname"><span class="pre">model_fields</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'indentation':</span> <span class="pre">FieldInfo(annotation=int,</span> <span class="pre">required=False,</span> <span class="pre">default=2,</span> <span class="pre">metadata=[Ge(ge=0)]),</span> <span class="pre">'line_length':</span> <span class="pre">FieldInfo(annotation=int,</span> <span class="pre">required=False,</span> <span class="pre">default=90,</span> <span class="pre">metadata=[Gt(gt=0)]),</span> <span class="pre">'loglevel':</span> <span class="pre">FieldInfo(annotation=Literal['INFO',</span> <span class="pre">'DEBUG',</span> <span class="pre">'WARNING',</span> <span class="pre">'ERROR',</span> <span class="pre">'CRITICAL'],</span> <span class="pre">required=False,</span> <span class="pre">default='INFO'),</span> <span class="pre">'section_order_overrides':</span> <span class="pre">FieldInfo(annotation=tuple[str,</span> <span class="pre">...],</span> <span class="pre">required=False,</span> <span class="pre">default=())}</span></em><a class="headerlink" href="#toml_formatter.config_parser.ParsedConfig.model_fields" title="Link to this definition"></a></dt>
-<dd><p>Metadata about the fields defined on the model,
-mapping of field names to [<cite>FieldInfo</cite>][pydantic.fields.FieldInfo].</p>
-<p>This replaces <cite>Model.__fields__</cite> from Pydantic V1.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="toml_formatter.config_parser.ParsedConfig.section_order_overrides">
-<span class="sig-name descname"><span class="pre">section_order_overrides</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#toml_formatter.config_parser.ParsedConfig.section_order_overrides" title="Link to this definition"></a></dt>
-<dd></dd></dl>
 
 </dd></dl>
 
@@ -378,29 +419,16 @@ mapping of field names to [<cite>FieldInfo</cite>][pydantic.fields.FieldInfo].</
 <span id="toml-formatter-toml-formatter-module"></span><h2>toml_formatter.toml_formatter module<a class="headerlink" href="#module-toml_formatter.toml_formatter" title="Link to this heading"></a></h2>
 <p>Code for a rudimentary TOML formatter, hopefully covering the most common use cases.</p>
 <dl class="py class">
-<dt class="sig sig-object py" id="toml_formatter.toml_formatter.BaseTomlContentsSequence">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BaseTomlContentsSequence</span></span><a class="reference internal" href="_modules/toml_formatter/toml_formatter.html#BaseTomlContentsSequence"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toml_formatter.toml_formatter.BaseTomlContentsSequence" title="Link to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code></p>
-<p>Basic functionality for the <cite>Sequence</cite>-type classes in the module.</p>
-<dl class="py property">
-<dt class="sig sig-object py" id="toml_formatter.toml_formatter.BaseTomlContentsSequence.data">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">data</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span></em><a class="headerlink" href="#toml_formatter.toml_formatter.BaseTomlContentsSequence.data" title="Link to this definition"></a></dt>
-<dd><p>Return data stored in the container. Parsing is performed upon assignment.</p>
-</dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="toml_formatter.toml_formatter.BaseTomlContentsSequence.indentation">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">indentation</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#toml_formatter.toml_formatter.BaseTomlContentsSequence.indentation" title="Link to this definition"></a></dt>
-<dd><p>Return the indentation applied for each scope level change.</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
 <dt class="sig sig-object py" id="toml_formatter.toml_formatter.FormattedToml">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">FormattedToml</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">formatting_options</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#toml_formatter.config_parser.ParsedConfig" title="toml_formatter.config_parser.ParsedConfig"><span class="pre">ParsedConfig</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">ParsedConfig(line_length=90,</span> <span class="pre">indentation=2,</span> <span class="pre">section_order_overrides=(),</span> <span class="pre">loglevel='INFO')</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toml_formatter/toml_formatter.html#FormattedToml"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toml_formatter.toml_formatter.FormattedToml" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">FormattedToml</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">formatter_options</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#toml_formatter.config_parser.FormatterOptions" title="toml_formatter.config_parser.FormatterOptions"><span class="pre">FormatterOptions</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">FormatterOptions(line_length=90,</span> <span class="pre">indentation=2,</span> <span class="pre">section_order_overrides=(),</span> <span class="pre">loglevel='INFO')</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toml_formatter/toml_formatter.html#FormattedToml"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toml_formatter.toml_formatter.FormattedToml" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Class to help format the contents of a TOML file.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="toml_formatter.toml_formatter.FormattedToml.dumps">
+<span class="sig-name descname"><span class="pre">dumps</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/toml_formatter/toml_formatter.html#FormattedToml.dumps"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toml_formatter.toml_formatter.FormattedToml.dumps" title="Link to this definition"></a></dt>
+<dd><p>Return a string representation of the formatted TOML.</p>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="toml_formatter.toml_formatter.FormattedToml.from_file">
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toml_formatter/toml_formatter.html#FormattedToml.from_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toml_formatter.toml_formatter.FormattedToml.from_file" title="Link to this definition"></a></dt>
@@ -421,83 +449,8 @@ mapping of field names to [<cite>FieldInfo</cite>][pydantic.fields.FieldInfo].</
 
 <dl class="py property">
 <dt class="sig sig-object py" id="toml_formatter.toml_formatter.FormattedToml.sections">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">sections</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#toml_formatter.toml_formatter.FormattedTomlFileSection" title="toml_formatter.toml_formatter.FormattedTomlFileSection"><span class="pre">FormattedTomlFileSection</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#toml_formatter.toml_formatter.FormattedToml.sections" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">sections</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">_FormattedTomlFileSection</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#toml_formatter.toml_formatter.FormattedToml.sections" title="Link to this definition"></a></dt>
 <dd><p>Return the sections present in the file.</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="toml_formatter.toml_formatter.FormattedTomlFileSection">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">FormattedTomlFileSection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">formatting_options</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#toml_formatter.config_parser.ParsedConfig" title="toml_formatter.config_parser.ParsedConfig"><span class="pre">ParsedConfig</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">ParsedConfig(line_length=90,</span> <span class="pre">indentation=2,</span> <span class="pre">section_order_overrides=(),</span> <span class="pre">loglevel='INFO')</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toml_formatter/toml_formatter.html#FormattedTomlFileSection"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toml_formatter.toml_formatter.FormattedTomlFileSection" title="Link to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#toml_formatter.toml_formatter.BaseTomlContentsSequence" title="toml_formatter.toml_formatter.BaseTomlContentsSequence"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseTomlContentsSequence</span></code></a></p>
-<p>Class that holds and formats data for a single section of a TOML file.</p>
-<dl class="py property">
-<dt class="sig sig-object py" id="toml_formatter.toml_formatter.FormattedTomlFileSection.data">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">data</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span></em><a class="headerlink" href="#toml_formatter.toml_formatter.FormattedTomlFileSection.data" title="Link to this definition"></a></dt>
-<dd><p>Return data stored in the container. Parsing is performed upon assignment.</p>
-</dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="toml_formatter.toml_formatter.FormattedTomlFileSection.is_comment">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_comment</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#toml_formatter.toml_formatter.FormattedTomlFileSection.is_comment" title="Link to this definition"></a></dt>
-<dd><p>Return True if the table only contains comments, and False otherwise.</p>
-</dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="toml_formatter.toml_formatter.FormattedTomlFileSection.name">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#toml_formatter.toml_formatter.FormattedTomlFileSection.name" title="Link to this definition"></a></dt>
-<dd><p>Return the name of the table.</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="toml_formatter.toml_formatter.ParsedTomlFileEntry">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ParsedTomlFileEntry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">single_entry_string</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">formatting_options</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#toml_formatter.config_parser.ParsedConfig" title="toml_formatter.config_parser.ParsedConfig"><span class="pre">ParsedConfig</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">ParsedConfig(line_length=90,</span> <span class="pre">indentation=2,</span> <span class="pre">section_order_overrides=(),</span> <span class="pre">loglevel='INFO')</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toml_formatter/toml_formatter.html#ParsedTomlFileEntry"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toml_formatter.toml_formatter.ParsedTomlFileEntry" title="Link to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>A single, atomic parsed entry in a TOML file.</p>
-<dl class="py property">
-<dt class="sig sig-object py" id="toml_formatter.toml_formatter.ParsedTomlFileEntry.defined_as_key_value">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">defined_as_key_value</span></span><a class="headerlink" href="#toml_formatter.toml_formatter.ParsedTomlFileEntry.defined_as_key_value" title="Link to this definition"></a></dt>
-<dd><p>Return True if instance was defined as a key-value pair; False otherwise.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="toml_formatter.toml_formatter.ParsedTomlFileEntry.indent">
-<span class="sig-name descname"><span class="pre">indent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">indent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toml_formatter/toml_formatter.html#ParsedTomlFileEntry.indent"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toml_formatter.toml_formatter.ParsedTomlFileEntry.indent" title="Link to this definition"></a></dt>
-<dd><p>Set the number of spaces for the indentation of the atomic entry.</p>
-</dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="toml_formatter.toml_formatter.ParsedTomlFileEntry.item">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">item</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Item</span></em><a class="headerlink" href="#toml_formatter.toml_formatter.ParsedTomlFileEntry.item" title="Link to this definition"></a></dt>
-<dd><p>Return the <cite>Item</cite> associated with the atomic entry.</p>
-</dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="toml_formatter.toml_formatter.ParsedTomlFileEntry.key">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">key</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Key</span></em><a class="headerlink" href="#toml_formatter.toml_formatter.ParsedTomlFileEntry.key" title="Link to this definition"></a></dt>
-<dd><p>Return the <cite>Key</cite> associated with the atomic entry.</p>
-</dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="toml_formatter.toml_formatter.ParsedTomlFileEntry.toml_doc_obj">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">toml_doc_obj</span></span><a class="headerlink" href="#toml_formatter.toml_formatter.ParsedTomlFileEntry.toml_doc_obj" title="Link to this definition"></a></dt>
-<dd><p>Return the <cite>tomlkit.TOMLDocument</cite> obj underneath the instance.</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="toml_formatter.toml_formatter.TomlFileEntriesContainer">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TomlFileEntriesContainer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toml_formatter/toml_formatter.html#TomlFileEntriesContainer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toml_formatter.toml_formatter.TomlFileEntriesContainer" title="Link to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#toml_formatter.toml_formatter.BaseTomlContentsSequence" title="toml_formatter.toml_formatter.BaseTomlContentsSequence"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseTomlContentsSequence</span></code></a></p>
-<p>Container for parsed TOML file entries.</p>
-<dl class="py property">
-<dt class="sig sig-object py" id="toml_formatter.toml_formatter.TomlFileEntriesContainer.data">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">data</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span></em><a class="headerlink" href="#toml_formatter.toml_formatter.TomlFileEntriesContainer.data" title="Link to this definition"></a></dt>
-<dd><p>Return data stored in the container. Parsing is performed upon assignment.</p>
 </dd></dl>
 
 </dd></dl>
@@ -516,7 +469,7 @@ mapping of field names to [<cite>FieldInfo</cite>][pydantic.fields.FieldInfo].</
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Paulo V C Medeiros.
-      <span class="lastupdated">Last updated on 2023-10-26T08:38:17Z.
+      <span class="lastupdated">Last updated on 2023-10-26T09:55:30Z.
       </span></p>
   </div>
 
